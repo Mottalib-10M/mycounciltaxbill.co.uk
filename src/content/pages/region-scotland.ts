@@ -25,7 +25,7 @@ export default definePage({
     return [
       { q: 'Which council in Scotland has the lowest council tax for 2026/27?', a: `${s[0].name}, at ${h.m2(s[0].bandD)} for Band D before water, followed by ${s[1].name} at ${h.m2(s[1].bandD)} and ${s[2].name} at ${h.m2(s[2].bandD)}. With Scottish Water's charges added, a Band D home in ${s[0].name} pays ${h.m2(h.E.bill({ council: s[0].id, band: 3 }).annual)} in total for the year.` },
       { q: 'Is council tax lower on the Scottish islands?', a: `Two of the three island councils are among the cheapest: ${isl[0].name} charges ${h.m2(isl[0].bandD)} at Band D and ${isl[2].name} ${h.m2(isl[2].bandD)}. ${isl[1].name} is closer to the middle of the table at ${h.m2(isl[1].bandD)}. Water charges are the same as on the mainland.` },
-      { q: 'Why did Scottish council tax rise so much in 2026?', a: 'Scottish council tax was frozen across the country in 2024/25, with the Scottish Government funding councils instead, and councils were free to set their own rises again from 2025/26. Many used that freedom to close budget gaps, and several set rises well above the English referendum limit for 2026/27, as the change column shows.' },
+      { q: 'Why did Scottish council tax rise so much in 2026?', a: 'Each Scottish council sets its own Band D charge, and no referendum limit like the English one applies. Many councils used that freedom to close budget gaps for 2026/27, and several set rises well above the English limit, as the change column of the table shows. Water and waste water charges rose on top, by the same percentage everywhere.' },
     ];
   },
   body: (h) => {

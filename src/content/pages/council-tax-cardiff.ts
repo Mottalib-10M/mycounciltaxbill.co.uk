@@ -6,7 +6,7 @@ export default definePage({
   order: 200,
   tool: { kind: 'ct', props: { council: 'cardiff', band: 3 } },
   related: ['region-wales', 'wales-council-tax-revaluation', 'second-home-council-tax', 'check-council-tax-band'],
-  sources: ['wales_levels', 'wales_reform', 'wales_premiums', 'gov_bands', 'voa_check'],
+  sources: ['leg_wales_fire', 'wales_levels', 'wales_reform', 'wales_premiums', 'gov_bands', 'voa_check'],
   slug: 'cardiff-council-tax',
   nav: 'Cardiff',
   card: 'Cardiff bands A to I for 2026/27, the police and community council shares, Welsh premiums and the 2028 revaluation.',
@@ -24,7 +24,7 @@ export default definePage({
     const c = h.c('cardiff');
     return [
       { q: 'What does a Band I home pay in Cardiff?', a: `Band I covers homes worth more than ${h.m(h.P.bands.wales.upper[7]!)} on the 2003 valuation date and pays ${h.P.bands.wales.num[8]}/${h.P.bands.wales.den} of Band D. In Cardiff that is ${h.m2(h.E.bandCharge(c, 8))} for ${h.P.taxYear} with two adults, or ${h.m2(h.E.bill({ council: 'cardiff', band: 8, household: 'one' }).annual)} for one adult, the same Welsh ratio as in the other councils.` },
-      { q: 'Why is there no fire and rescue line on a Cardiff bill?', a: 'In Wales the fire and rescue authorities are funded by contributions from the councils they cover, so their cost is part of the council\'s own share rather than a separate precept. A Cardiff bill therefore shows only the council, the police and crime commissioner and, where there is one, the community council.' },
+      { q: 'Why is there no fire and rescue line on a Cardiff bill?', a: 'In Wales the fire and rescue authorities are funded by contributions from the councils they cover, so their cost is part of the council\'s own share rather than a separate precept; the North Wales combination scheme, for example, requires each council to pay its share of the fire authority\'s net expenses. A Cardiff bill therefore shows only the council, the police and crime commissioner and, where there is one, the community council.' },
       { q: 'Do all Cardiff homes pay a community council precept?', a: `No. Community councils cover only some parts of the city, and only homes in those areas pay their precept. The Welsh Government table spreads the total over the whole city as an average of ${h.m2(c.parts.parish)} at Band D, so a home outside a community council area pays slightly less than the figures shown here.` },
     ];
   },

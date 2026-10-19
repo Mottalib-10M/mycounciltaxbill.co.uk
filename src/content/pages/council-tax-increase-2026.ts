@@ -79,7 +79,7 @@ ${h.table(['Council', 'Band D 2025/26', 'Band D 2026/27', 'Change', 'In pounds']
 <p>Welsh councils have no referendum limit: each one sets its own rise, and the Welsh Government can cap an excessive one. For ${h.P.taxYear} the average Band D across Wales, including police and community councils, rose by ${h.pc(h.P.averages.wales.change, 1)} to ${h.m2(h.P.averages.wales.bandD)} (${h.src('wales_levels', 'Welsh Government, council tax levels')}). The highest rise was ${h.pc(wa[0].r, 1)} in ${wa[0].c.name} and the lowest ${h.pc(wa[wa.length - 1].r, 1)} in ${wa[wa.length - 1].c.name}. The ${h.a('region-wales', 'Welsh table')} lists all 22 councils.</p>
 
 <h2>Scotland</h2>
-<p>Scottish council tax was frozen in 2024/25 and rose sharply in 2025/26. For ${h.P.taxYear} the rises again differ widely between councils (${h.src('scot_datasets', 'Scottish Government, council tax datasets')}):</p>
+<p>Scottish councils set their own rises each year, with no referendum limit. For ${h.P.taxYear} the rises differ widely between councils (${h.src('scot_datasets', 'Scottish Government, council tax datasets')}):</p>
 ${h.table(['Council', 'Band D 2025/26', 'Band D 2026/27', 'Change', 'In pounds'], scRows, 'The four largest and three smallest rises. Water and waste water charges excluded; they rose separately.', ['l', 'r', 'r', 'r', 'r'])}
 <p>On top of council tax, Scottish Water's charges went up ${h.pc(h.P.scottishWater.increase, 2)} for every band, so a Scottish bill rose by more than the council tax figure alone. All 32 councils are in the ${h.a('region-scotland', 'Scottish table')}.</p>
 

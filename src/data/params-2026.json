@@ -526,6 +526,24 @@
       "label": {
         "en": "Cornwall Council, second homes"
       }
+    },
+    "leg_scot_proposals": {
+      "url": "https://www.legislation.gov.uk/uksi/1993/355/regulation/5",
+      "label": {
+        "en": "Council Tax (Alteration of Lists and Appeals) (Scotland) Regulations 1993, regulation 5"
+      }
+    },
+    "leg_scot_warrant": {
+      "url": "https://www.legislation.gov.uk/ukpga/1992/14/schedule/8/paragraph/2",
+      "label": {
+        "en": "Local Government Finance Act 1992, Schedule 8, paragraph 2 (summary warrant, Scotland)"
+      }
+    },
+    "leg_wales_fire": {
+      "url": "https://www.legislation.gov.uk/uksi/1995/3218/schedule/made",
+      "label": {
+        "en": "North Wales Fire Services (Combination Scheme) Order 1995, paragraph 21"
+      }
     }
   },
   "localPremiums": {

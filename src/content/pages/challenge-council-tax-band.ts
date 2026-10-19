@@ -6,7 +6,7 @@ export default definePage({
   order: 40,
   mini: { kind: 'mini:band-lower', props: { council: 'bristol', band: 3, years: 6 } },
   related: ['check-council-tax-band', 'what-council-tax-band-am-i', 'council-tax-bands', 'scotland-council-tax'],
-  sources: ['voa_challenge', 'voa_legal_right', 'voa_band_review', 'voa_after', 'voa_blog_increase', 'saa'],
+  sources: ['voa_challenge', 'voa_legal_right', 'voa_band_review', 'voa_after', 'voa_blog_increase', 'saa', 'leg_scot_proposals'],
   slug: 'challenge-council-tax-band',
   nav: 'Challenge your band',
   card: 'The two routes, the evidence that counts, the deadlines, and what a lower band is worth.',
@@ -66,7 +66,7 @@ ${h.box('The risk', `<p>The Valuation Office's own blog lists challenges among t
 <p>The Valuation Office tells the council, which sends a revised bill and refunds or credits the difference for the period at that address. ${V.backdatingNote} If you have already moved out, the refund is still due: give the council a forwarding address. A lower band also lowers any premium charged on a second or empty home, since the premium is a multiple of the band charge.</p>
 
 <h2>Challenging a band in Scotland</h2>
-<p>Scotland has no Valuation Office: each area has an assessor, working for a valuation joint board or a council, listed by the Scottish Assessors Association (${h.src('saa', 'Scottish Assessors Association')}). A new taxpayer can make a proposal within ${V.newResidentMonths} months of becoming liable, and the assessor can also be asked to look again when the home or the area changes. A refused proposal can go on appeal to the First-tier Tribunal for Scotland. Scottish bands rest on 1991 values like England's, but the ${h.a('scotland-council-tax', 'Scottish ratios')} are steeper in the upper bands, so a move from Band E to D saves proportionally more there.</p>
+<p>Scotland has no Valuation Office: each area has an assessor, working for a valuation joint board or a council, listed by the Scottish Assessors Association (${h.src('saa', 'Scottish Assessors Association')}). A new taxpayer can make a proposal within ${V.newResidentMonths} months of becoming the taxpayer for the home (${h.src('leg_scot_proposals', 'Scottish appeals regulations 1993')}), and the assessor can also be asked to look again when the home or the area changes. A refused proposal can go on appeal to the First-tier Tribunal for Scotland. Scottish bands rest on 1991 values like England's, but the ${h.a('scotland-council-tax', 'Scottish ratios')} are steeper in the upper bands, so a move from Band E to D saves proportionally more there.</p>
 
 <h2>Paid services</h2>
 <p>Firms sell band reports and appeal packs, and some agents take a share of the refund. Nothing in the process needs one: the challenge is free, made online, and the evidence is public. If a firm cold calls you about a band refund, check that it is not asking for a fee for something you can do at no cost. The strongest cases are simple ones: an identical neighbour in a lower band, or a sale near the valuation date below your band's range.</p>
