@@ -62,7 +62,7 @@ export default function CouncilCalc({ council: c0 = 'birmingham', band: b0 = 1, 
   const capText = occupancy === 'main' ? '' : cap === null ? 'Your council sets it; 100 % is the national default' : cap === 0 ? 'No premium at this stage' : `Up to ${Math.round(cap * 100)} % here; 0 if your council does not charge it`;
 
   return (
-    <div className="rechner border border-navy-300 bg-white p-4 sm:p-5">
+    <div data-chrome className="rechner border border-navy-300 bg-white p-4 sm:p-5">
       <div className="grid gap-6 lg:grid-cols-[1fr_minmax(0,25rem)]">
         <form className="grid content-start gap-4" onSubmit={(e) => e.preventDefault()}>
           <div className="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2 sm:gap-y-0">

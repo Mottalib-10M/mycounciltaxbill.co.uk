@@ -11,7 +11,7 @@ const lang = 'en';
 const n = PAGES.length + 1;
 const nSrc = Object.keys(P.sources).length;
 ---
-<PageLayout title="Bill by Band: who works out these council tax bills, and how" description="Who publishes Bill by Band, why it gives the real 2026/27 council tax bill of 350 councils with discounts and premiums, where the figures come from and how to report an error." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
+<PageLayout title="Bill by Band: who works out these council tax bills, and how" description="Who publishes Bill by Band, why it gives the real 2026/27 council tax bill of 350 councils with discounts and premiums, and where the figures come from." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
   <header class="mb-6"><p class="kicker">About</p><h1 class="mt-1 text-3xl font-bold text-navy-900 md:text-4xl">Who works out the bills on Bill by Band</h1></header>
   <div class="prose prose-slate max-w-none">
     <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>

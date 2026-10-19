@@ -1,8 +1,137 @@
 ---
+/**
+ * Home: the full bill calculator on the first screen, then a reference page on how a 2026/27 bill
+ * is built (RECETTE §5, §21). Every figure is computed from the engine and the official tables.
+ */
 import PageLayout from '../layouts/PageLayout.astro';
 import Tool from './Tool.astro';
+import { route } from '../i18n/routes';
+import { PAGES } from '../lib/guides';
+import { groupLabel, GROUPS_ORDER } from '../i18n/nav';
+import { helpers } from '../lib/helpers';
+import { LAST_UPDATED, AUTHOR_NAME } from '../data/site-config';
+import { displayDate } from '../lib/format';
+import { faqSchema, webApplicationSchema, websiteSchema, organizationSchema } from '../lib/seo';
+const lang = 'en';
+const h = helpers(true);
+const { P, E, m, m2, pc } = h;
+const C = E.COUNCILS;
+const eng = E.inNation('england'), wal = E.inNation('wales'), sco = E.inNation('scotland');
+const sorted = [...C].sort((a, b) => a.bandD - b.bandD);
+const lowE = [...eng].sort((a, b) => a.bandD - b.bandD), cheap = lowE[0], dear = lowE[lowE.length - 1];
+const low10 = sorted.slice(0, 8), high10 = sorted.slice(-8).reverse();
+const row = (c: E.Council) => [h.ca(c.id, c.name), E.NATION_NAME[c.nation], m2(E.bandCharge(c, 0)), m2(c.bandD)];
+const avgE = P.averages.england.bandD;
+const strip = P.bands.england.letters.map((l, i) => ({ l, f: `${P.bands.england.num[i]}/9`, v: avgE * P.bands.england.num[i] / 9, w: Math.round(P.bands.england.num[i] / 18 * 100) }));
+const ex = E.bill({ council: 'leeds', band: 2 });
+const exOne = E.bill({ council: 'leeds', band: 2, household: 'one' });
+const exDis = E.bill({ council: 'leeds', band: 2, household: 'one', disabled: true });
+const exPlan = E.instalmentPlan(exOne.annual, 10);
+const exSec = E.bill({ council: 'leeds', band: 2, occupancy: 'second' });
+const glas = E.bill({ council: 'glasgow-city', band: 2 });
+const nSrc = Object.keys(P.sources).length;
+const faqs = [
+  { q: 'How do I work out my council tax bill for 2026/27?', a: `Find your band on the official search service, choose your council and band in the calculator at the top of this page, then say who lives in the home. It applies the ${P.taxYear} Band D charge of your council, the fraction of Band D that your band pays, any discount, reduction or premium, and Scottish Water charges in Scotland, and splits the total into monthly instalments.` },
+  { q: 'What is the average council tax bill in 2026/27?', a: `The average Band D bill is ${m2(P.averages.england.bandD)} in England, ${m2(P.averages.wales.bandD)} in Wales and ${m2(P.averages.scotland.bandD)} in Scotland before water charges. Most homes are in lower bands than D, so the average bill per home is lower than these figures; in England, Band B pays seven ninths and Band C eight ninths of Band D.` },
+  { q: 'Which council has the lowest council tax in England?', a: `${cheap.name}, at ${m2(cheap.bandD)} at Band D for ${P.taxYear}, including the Greater London Authority precept. The highest is ${dear.name}, at ${m2(dear.bandD)}. Bands make a bigger difference than councils: a Band H home always pays three times a Band A home in the same council in England.` },
+  { q: 'Is this council tax calculator the same as my council\'s bill?', a: 'It uses the same Band D figures, band ratios and national rules, so for most homes it matches the bill to within a few pounds. Differences come from your exact parish or community council, which we average over the council area, from local discounts and premium rates, and from Council Tax Reduction for a low income, which the calculator does not include.' },
+  { q: 'Why does a Scottish council tax bill include water?', a: `Scottish councils collect Scottish Water's water and waste water charges with council tax. They are the same in every council area and follow their own band ratios; for ${P.taxYear} they add ${m2(P.scottishWater.water[3] + P.scottishWater.sewerage[3])} to a Band D bill. The single person discount applies to them too, which the calculator includes.` },
+  { q: 'Does council tax depend on income?', a: 'Not directly. The bill depends on the band of the home and on who lives there. Households on a low income can apply to their council for Council Tax Reduction, a local scheme in England and national schemes in Wales and Scotland, which reduces what remains after every other discount. Pensioners on Pension Credit can often have the whole bill covered.' },
+];
+const jsonLd = [webApplicationSchema({ name: 'Council tax calculator 2026/27', description: 'The real 2026/27 council tax bill for 350 councils, with discounts and premiums.', path: route('home', lang), lang }), websiteSchema(lang), organizationSchema(lang), faqSchema(faqs, lang)];
+const groups = GROUPS_ORDER.filter((g) => g !== 'councils' && g !== 'regions').map((g) => ({ g, pages: PAGES.filter((p) => p.group === g) }));
+const regions = PAGES.filter((p) => p.group === 'regions'), councils = PAGES.filter((p) => p.group === 'councils');
 ---
-<PageLayout title="Council Tax Calculator 2026/27: Real Bill for 350 Councils" description="x" lang="en">
-  <h1>Council tax calculator 2026/27</h1>
-  <div data-outil class="mb-6"><Tool tool={{ kind: 'ct' }} primary={true} /></div>
+<PageLayout title="Council Tax Calculator 2026/27: Real Bill for 350 Councils" description="Council tax calculator for 2026/27: the real bill for 350 councils in England, Wales and Scotland, band by band, with discounts, exemptions and premiums." lang={lang} jsonLd={jsonLd} faqs={faqs}>
+  <header class="mb-3">
+    <h1 class="text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">Council tax calculator 2026/27: the bill you will actually get</h1>
+    <p class="mt-2 text-base text-navy-700 sm:text-lg">Pick a council and a band, say who lives in the home. The calculator applies the {P.taxYear} charge and every national rule, and gives the yearly bill and each instalment.</p>
+  </header>
+  <div data-outil class="mb-4"><Tool tool={{ kind: 'ct', props: { council: 'leeds', band: 2 } }} primary={true} /></div>
+  <p class="mb-8 text-sm text-navy-600">Tables of {displayDate('2026-03-25', 'en-GB')}, checked on <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-GB')}</time> · {AUTHOR_NAME} · <a href={route('method', lang)} class="underline hover:text-navy-900">How the bill is worked out</a> · <a href={route('about', lang)} class="underline hover:text-navy-900">About this site</a></p>
+
+  <div class="prose prose-slate max-w-none">
+    <p>This site does better than the first Google result, GOV.UK's page on council tax bands, which sends you to your council without giving any amount, because it works out the real {P.taxYear} bill of a home in each of the {C.length} councils of England, Wales and Scotland, band by band, with the single person discount, exemptions, the Disabled Band Reduction, the premiums on second and empty homes and Scottish Water, from the official tables published in March 2026. Councils publish one table each. The government publishes Band D for everyone. Neither tells a household what it will pay once its own situation is taken into account; that is the gap the calculator fills, for a family, a person living alone, a student house or the owner of a holiday cottage alike.</p>
+
+    <h2>A bill in four steps</h2>
+    <p>Every council tax bill in Britain is built the same way, whatever the council. The calculator follows the same order as the council's billing system, so that each line can be checked against the notice that arrives in March.</p>
+    <ol>
+      <li><strong>The council's Band D charge.</strong> Each billing authority sets one figure a year, the charge for a Band D home with two adults. It includes the precepts of the county council where there is one, the police, the fire service, any mayor and the parish or community council. For {P.taxYear} it ranges from {m2(sorted[0].bandD)} in {sorted[0].name} to {m2(sorted[sorted.length - 1].bandD)} in {sorted[sorted.length - 1].name}.</li>
+      <li><strong>Your band.</strong> The law turns Band D into the other bands with fixed fractions. In England and Wales, Band A pays six ninths and Band H eighteen ninths; Scotland has steeper fractions for the upper bands. A home's band depends on its value in 1991, or 2003 in Wales, not today.</li>
+      <li><strong>Who lives there, and how the home is used.</strong> One adult who counts: {pc(P.discounts.singlePerson)} off. Nobody who counts: {pc(P.discounts.allDisregarded)} off, or nothing to pay if everyone is a student. A home adapted for a disabled resident: one band lower. A second home or a long-term empty home: a premium of up to {pc(P.premiums.england.secondHomeMax)} or more on top.</li>
+      <li><strong>Paying it.</strong> Ten monthly instalments by default, twelve on request in England and Wales, with each instalment after the first rounded to the pound.</li>
+    </ol>
+    <p>Here is a worked case. A Band C home in {h.ca('leeds', 'Leeds')} costs {m2(ex.annual)} for two adults. With one adult living alone it is {m2(exOne.annual)}, paid as {m2(exPlan.first)} in April and nine instalments of {m2(exPlan.regular)}. If that adult is a wheelchair user in an adapted home, it is charged as Band B and then discounted: {m2(exDis.annual)}. As a furnished second home with nobody living there, it would cost {m2(exSec.annual)} at the legal maximum premium.</p>
+  </div>
+
+  <section class="not-prose my-10" aria-labelledby="strip-title">
+    <h2 id="strip-title" class="text-2xl font-bold text-navy-900">What each band pays at the English average</h2>
+    <p class="mt-2 max-w-3xl text-navy-700">Band D in England averages {m2(avgE)} for {P.taxYear}. Each bar is the share of Band D that a band pays, set by section 5 of the Local Government Finance Act 1992.</p>
+    <dl class="mt-5 space-y-2">
+      {strip.map((s) => (
+        <div class="grid grid-cols-[3.5rem_minmax(0,1fr)_6.5rem] items-center gap-3 text-sm">
+          <dt class="font-semibold text-navy-900">Band {s.l}</dt>
+          <dd class="h-6 rounded-sm bg-navy-100"><span class="block h-6 rounded-sm bg-accent-600" style={`width:${s.w}%`}></span></dd>
+          <dd class="text-right tabular-nums text-navy-800">{m(s.v)} <span class="text-navy-500">{s.f}</span></dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <div class="prose prose-slate max-w-none">
+    <h2>Three nations, three sets of rules</h2>
+    <p><strong>England</strong> has {eng.length} billing authorities. Most of the country outside the big cities has two tiers: a county council and a district council, with the district collecting the whole bill. Each year Parliament sets the rise above which a council needs a local referendum, {pc(P.referendum.england.total, 2)} for councils with social care for {P.taxYear}, and seven councils were allowed more. The average Band D rose by {pc(P.averages.england.change, 2)} to {m2(P.averages.england.bandD)}. The {h.a('council-tax-increase-2026', 'increase page')} lists the largest and smallest rises.</p>
+    <p><strong>Wales</strong> has {wal.length} councils and nine bands, the extra Band I for the most valuable homes, based on values of April 2003. Bills include a community council precept in most areas and the police precept. Wales will revalue every home again from April 2028, the first revaluation in Britain since its own in 2005: the {h.a('wales-council-tax-revaluation', 'revaluation page')} explains what is known so far, and what is still to come.</p>
+    <p><strong>Scotland</strong> has {sco.length} councils, with bands based on 1991 values but on lower brackets than England, and steeper ratios for Bands E to H since 2017. Every Scottish bill also carries Scottish Water's charges: in Glasgow a Band C home pays {m2(glas.councilTax)} of council tax and {m2(glas.water + glas.sewerage)} for water and waste water, {m2(glas.annual)} in total. The {h.a('scotland-council-tax', 'Scotland page')} covers the ratios, the water charges and the new second homes premium.</p>
+    <p>Northern Ireland has no council tax; homes there pay domestic rates on a capital value, which this site does not cover.</p>
+
+    <h2>The cheapest and the dearest councils</h2>
+    <p>Band D figures for two adults, including every precept, for {P.taxYear}. London boroughs dominate the bottom of the table because the Mayor's precept is low relative to county shares elsewhere and some boroughs have kept their own charge very low for decades. Scottish figures are shown here without water, as the Scottish Government publishes them.</p>
+  </div>
+  <div class="grid gap-8 lg:grid-cols-2">
+    <div class="min-w-0"><h3 class="mb-2 text-lg font-semibold text-navy-900">Lowest Band D</h3><Fragment set:html={h.table(['Council', 'Nation', 'Band A', 'Band D'], low10.map(row), undefined, ['l', 'l', 'r', 'r'])} /></div>
+    <div class="min-w-0"><h3 class="mb-2 text-lg font-semibold text-navy-900">Highest Band D</h3><Fragment set:html={h.table(['Council', 'Nation', 'Band A', 'Band D'], high10.map(row), undefined, ['l', 'l', 'r', 'r'])} /></div>
+  </div>
+
+  <div class="prose prose-slate max-w-none">
+    <h2>Discounts and exemptions people miss</h2>
+    <p>A bill assumes two adults who count. The most common mistake is to assume that everyone over 18 counts. The law lists groups of people who are disregarded, and a household where only one adult is left after those are taken out pays a quarter less. Among them:</p>
+    <ul>
+      <li>full-time students and student nurses, and young people of 18 or 19 still at school or college;</li>
+      <li>apprentices and young people on funded training;</li>
+      <li>people with a severe mental impairment, such as advanced dementia, with a doctor's certificate and a qualifying benefit;</li>
+      <li>live-in carers looking after someone who is not their partner or young child;</li>
+      <li>people who have moved permanently into a care home or hospital, or who are in prison.</li>
+    </ul>
+    <p>The {h.a('council-tax-disregards', 'disregards page')} has the conditions for each, and the {h.a('council-tax-single-person-discount', 'single person discount page')} what a quarter is worth in your council. A home where everyone is a full-time student is exempt, as are halls of residence; the {h.a('council-tax-students', 'student page')} explains what happens when one resident is not a student. A home adapted for a disabled resident, with an extra room, a second bathroom or space for a wheelchair, is charged one band lower: the {h.a('council-tax-disabled-band-reduction', 'Disabled Band Reduction')} is not means tested and is often backdated. A self-contained annex has its own rules, from full exemption for a dependent relative to {pc(P.discounts.annexFamily)} off for family use in England, set out on the {h.a('council-tax-annexes', 'annex page')}.</p>
+
+    <h2>Second homes and empty homes</h2>
+    <p>The rules have changed fast. Since {h.date(P.premiums.england.secondHomeFrom)}, English councils may double the bill on a furnished home that is nobody's main residence. Homes empty and unfurnished for a year can pay double, for five years three times, and for ten years four times. In Wales premiums can reach {pc(P.premiums.wales.max)}, four times the bill, on both. In Scotland a {pc(P.premiums.scotland.default)} premium applies by default from {h.date(P.premiums.scotland.from)}, with each council free to set another rate. There are exceptions for homes being sold or let, after a death, under major repair and for job-related homes. The national tables do not say which council charges what, so the calculator starts from the legal maximum in England and lets you type your council's rate; the guides on {h.a('second-home-council-tax', 'second homes')} and {h.a('empty-property-council-tax', 'empty homes')} give the detail.</p>
+
+    <h2>Is your band right?</h2>
+    <p>Bands were set in a hurry in the early 1990s, and identical homes on one street are sometimes in different bands. The band of any address is public: the {h.a('check-council-tax-band', 'band checking guide')} shows how to compare yours with the street, the {h.a('what-council-tax-band-am-i', 'band estimator')} turns a 1991 value into a band, and the {h.a('challenge-council-tax-band', 'challenge guide')} sets out the two routes to a change, the evidence that works, and the real risk that a review moves the band up instead.</p>
+
+    <h2>Moving, paying and arrears</h2>
+    <p>Council tax is a daily charge. Moving in or out part way through the year means paying for the days at each address, worked out on the {h.a('council-tax-moving-house', 'moving house page')}. Paying in 12 instalments rather than 10 lowers each one by about a sixth; missing an instalment, on the other hand, can lead quickly to the loss of the right to pay by instalments and a summons. The {h.a('council-tax-monthly-payments', 'payments page')} explains the rounding of instalments, the right to 12 and the steps councils take when a payment is missed.</p>
+
+    <h2>Where the figures come from</h2>
+    <p>Every council's Band D and its split between the council, county, police, fire, mayor and parishes are generated by a script from the official spreadsheets: the <Fragment set:html={h.src('mhclg_levels', 'council tax levels for England')} /> of the Ministry of Housing, Communities and Local Government, the <Fragment set:html={h.src('wales_levels', 'Welsh Government\'s council tax levels')} /> and the <Fragment set:html={h.src('scot_datasets', 'Scottish Government\'s council tax datasets')} />, all published in March 2026, with Scottish Water's <Fragment set:html={h.src('scot_water', 'charges for 2026/27')} />. National rules sit in one parameter file that cites {nSrc} official pages. The English figures computed for each band match the government's own table to the penny for all {eng.length} councils, a check run on every build. The <a href={route('method', lang)}>method page</a> lists every rule and every limit; the <a href={route('about', lang)}>about page</a> says who publishes the site and how to report an error.</p>
+    <p>What the calculator leaves out: the exact parish or community council of your street, since it uses the average for the council area; Council Tax Reduction for people on a low income, which each English council designs itself; and local discretionary discounts. It never sees your address, and nothing you type leaves your browser. It is not advice: your council's bill is the one you pay.</p>
+  </div>
+
+  <section class="mt-12" aria-labelledby="guides-title">
+    <h2 id="guides-title" class="text-2xl font-bold text-navy-900">Guides</h2>
+    <div class="mt-4 grid gap-x-10 gap-y-6 md:grid-cols-2">
+      {groups.map(({ g, pages }) => (
+        <div>
+          <h3 class="border-b border-navy-200 pb-1 text-sm font-semibold uppercase tracking-wide text-navy-600">{groupLabel(g)}</h3>
+          <ul class="mt-2 space-y-2">{pages.map((p) => <li><a href={route(p.id, lang)} class="font-medium text-accent-700 underline-offset-2 hover:underline">{p.nav}</a><span class="block text-sm text-navy-600">{p.card}</span></li>)}</ul>
+        </div>
+      ))}
+    </div>
+    <h3 class="mt-8 border-b border-navy-200 pb-1 text-sm font-semibold uppercase tracking-wide text-navy-600">Every council by region</h3>
+    <p class="mt-2 text-sm leading-7">{regions.map((p, i) => <Fragment><a href={route(p.id, lang)} class="text-accent-700 hover:underline">{p.nav}</a>{i < regions.length - 1 ? ' · ' : ''}</Fragment>)}</p>
+    <h3 class="mt-6 border-b border-navy-200 pb-1 text-sm font-semibold uppercase tracking-wide text-navy-600">Councils with their own page</h3>
+    <p class="mt-2 text-sm leading-7">{councils.map((p, i) => <Fragment><a href={route(p.id, lang)} class="text-accent-700 hover:underline">{p.nav}</a>{i < councils.length - 1 ? ' · ' : ''}</Fragment>)}</p>
+  </section>
 </PageLayout>

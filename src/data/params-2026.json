@@ -295,7 +295,14 @@
   },
   "voa": {
     "backdatingNote": "If the band is lowered after a challenge, the council refunds the difference for the whole period you were overcharged at that address.",
-    "newResidentMonths": 6
+    "newResidentMonths": 6,
+    "proposalMonthsDecision": 4,
+    "reviewMonthsDecision": 12,
+    "appealMonthsEngland": 3,
+    "appealMonthsWales": 4,
+    "salesWindowEngland": "1 April 1989 to 31 March 1993",
+    "salesWindowWales": "1 April 2001 to 31 March 2005",
+    "comparables": 5
   },
   "sources": {
     "mhclg_levels": {
@@ -501,6 +508,33 @@
       "label": {
         "en": "Council Tax (Substitution of Proportion) (Scotland) Order 2016"
       }
+    },
+    "voa_blog_increase": {
+      "url": "https://valuationoffice.blog.gov.uk/2026/03/03/why-your-propertys-council-tax-band-could-increase",
+      "label": {
+        "en": "Valuation Office blog, why your property's Council Tax band could increase (3 March 2026)"
+      }
+    },
+    "gwynedd_premium": {
+      "url": "https://www.gwynedd.llyw.cymru/en/Residents/Council-tax/Council-Tax-Premium-Second-homes-and-furnished-properties-that-are-not-a-main-residence.aspx",
+      "label": {
+        "en": "Cyngor Gwynedd, Council Tax premium on second homes"
+      }
+    },
+    "cornwall_second": {
+      "url": "https://www.cornwall.gov.uk/council-tax/second-homes",
+      "label": {
+        "en": "Cornwall Council, second homes"
+      }
+    }
+  },
+  "localPremiums": {
+    "note": "Rates read on each council's own page on 2026-10-19, for 2026/27.",
+    "gwynedd": {
+      "second": 1.5
+    },
+    "cornwall": {
+      "second": 1.0
     }
   }
 }
