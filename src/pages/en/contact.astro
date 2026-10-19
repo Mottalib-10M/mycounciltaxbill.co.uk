@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title={`Contact ${SITE_NAMES[lang]}: a Band D figure, a rule, the widget`} description="Write to Bill by Band when a council tax figure differs from your council's 2026/27 notice, when a discount or premium rule is missing, or to embed the bill calculator on your site." lang={lang} noindex={true} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. A person reads every message.</p>
+    <h2>Your bill does not match ours</h2>
+    <p>Tell us the council, the band, who lives in the home and the figures on your demand notice. The most common reason for a gap is the parish or community council: we use the average for the whole council area, while your notice uses your own parish, which can be several tens of pounds higher or lower. A local discount or premium decided by your council is the second reason. If the official table itself has been revised, we rebuild the site from the new file and date the change.</p>
+    <h2>What we cannot do</h2>
+    <p>We cannot see your council tax account, change your band, award a discount or speak to a council or the Valuation Office Agency for you. Please do not send your account number or your address. A band challenge is made to the Valuation Office Agency in England and Wales and to the assessor in Scotland; a discount or exemption is claimed from the council that sends your bill. If you are behind with payments, free debt advice is available from Citizens Advice and StepChange.</p>
+    <h2>Using the calculator on your own site</h2>
+    <p>Letting agents, student unions, estate agents and community groups can show the bill calculator in an iframe at no cost. The code and the conditions are on the <a href={route('widget', lang)}>embed page</a>.</p>
+    <h2>Publisher</h2>
+    <LegalIdentity lang={lang} />
+    <p>Updated: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

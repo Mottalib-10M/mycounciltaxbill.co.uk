@@ -1,0 +1,32 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CLARITY_ID, CONTACT_EMAIL, GA4_ID, LAST_UPDATED, LEGAL, SITE_NAMES, SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title={`Legal notice of ${SITE_NAMES[lang]}: publisher, host, liability`} description="Legal notice of Bill by Band: the publisher Radif Partners, the host, what the council tax estimates for England, Wales and Scotland cover, liability and reuse of public data." lang={lang} noindex={true} breadcrumbs={[{ label: 'Legal notice' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Legal notice</h1>
+    <p>Information given under Article 6 III-1 of French law no. 2004-575 of 21 June 2004, the publisher being established in France.</p>
+    <h2>Publisher</h2>
+    <LegalIdentity lang={lang} />
+    <p>Publication director: {AUTHOR_NAME}, responsible for the content of {SITE_URL}.</p>
+    <h2>Hosting provider</h2>
+    <LegalIdentity mode="hosting" lang={lang} />
+    <h2>What the site does</h2>
+    <p>The site estimates council tax bills for 2026/27 in England, Wales and Scotland from the Band D figures published by the Ministry of Housing, Communities and Local Government, the Welsh Government and the Scottish Government, and applies the national rules on discounts, exemptions, the Disabled Band Reduction Scheme and premiums for second and empty homes. It has no connection with any council, the Valuation Office Agency, the Scottish assessors or Scottish Water.</p>
+    <h2>An estimate, not a bill</h2>
+    <p>The amounts shown are estimates based on the assumptions set out on the <a href={route('method', lang)}>method page</a>. Your council's demand notice is the only bill that counts: it reflects your exact parish or community council, local discounts and premiums, Council Tax Reduction and any change of circumstances. Nothing here is legal or financial advice.</p>
+    <h2>Liability</h2>
+    <p>Each figure is taken from the official table or rule cited with it, and the calculation engine is tested before each build. The publisher gives no guarantee that no error or later change remains and cannot be held liable for a payment, a budget, a purchase or a band challenge decided on the basis of this site alone. Errors can be reported through the <a href={route('contact', lang)}>contact</a> page.</p>
+    <h2>Intellectual property and reuse</h2>
+    <p>Texts, graphics and code belong to the publisher. Council tax statistics and guidance from GOV.UK, gov.wales, gov.scot and legislation.gov.uk are public sector information reused under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="nofollow noopener">Open Government Licence v3.0</a>, with the source named on each page.</p>
+    {/* gen-legal-pages:terms */}
+    <h2>Personal data and cookies</h2>
+    {GA4_ID ? (<p>What you type in the calculators stays in your browser. The site sets Google Analytics audience measurement cookies (<code>_ga</code>, <code>_ga_{GA4_ID.replace('G-', '')}</code>, 13 months at most), with no advertising{CLARITY_ID && '; page stability is monitored with Microsoft Clarity, cookie-free'}. Details, legal basis and how to object: <a href={route('privacy', lang)}>privacy policy</a> and <a href={route('cookies', lang)}>cookies</a> page.</p>) : (<p>What you type in the calculators stays in your browser and the site sets no cookies{CLARITY_ID && '; page stability is monitored anonymously with Microsoft Clarity, cookie-free'}. See the <a href={route('privacy', lang)}>privacy policy</a> and the <a href={route('cookies', lang)}>cookies</a> page.</p>)}
+    {/* /gen-legal-pages:terms */}
+    <h2>Reporting unlawful content</h2><p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, with the page address and the reason.</p>
+    <h2>Governing law</h2><p>French law. Failing an amicable solution, the courts of {LEGAL.jurisdiction} have jurisdiction, without prejudice to the mandatory rules protecting consumers in their country of residence. Updated: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

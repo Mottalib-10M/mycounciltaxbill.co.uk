@@ -1,0 +1,26 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title={`Editorial policy of ${SITE_NAMES[lang]}: tables, rules, corrections`} description="Which official tables Bill by Band uses for council tax in England, Wales and Scotland, which sources it refuses, how the engine is tested, when the figures are re-read and how errors are fixed." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial and corrections policy</h1>
+    <p>People use these bills to budget a move, decide whether to challenge a band or price a holiday cottage. A wrong Band D figure or a premium applied in the wrong nation costs them money, so every figure on the site points back to the official file or rule it came from.</p>
+    <h2>Who is responsible</h2><p>{AUTHOR_NAME}, reachable at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>The data we use</h2>
+    <ul>
+      <li>for England, the MHCLG statistical release on council tax levels and its Table 9 and Table 10, which give every billing authority's figure by band and the share of the police, fire, county and Greater London Authority precepts;</li>
+      <li>for Wales, the Welsh Government's council tax levels release, with the county, community council and police elements of each council;</li>
+      <li>for Scotland, the Scottish Government's Council Tax by band table, and the Scottish Water charges printed on every Scottish bill;</li>
+      <li>for the rules, legislation.gov.uk (the Local Government Finance Act 1992 and the regulations made under it), GOV.UK, gov.wales, gov.scot and the Valuation Office Agency.</li>
+    </ul>
+    <h2>Sources we refuse</h2><p>Comparison sites, property report sellers, letting agents and other calculators never provide a figure here, however well they rank. In October 2026 several of them still showed 2025/26 rates or no rate at all for the rules that change a bill most, such as the second homes premium. A council's own page is used only to check a figure against the official table, as we did with the Scottish Water charges.</p>
+    <h2>Testing</h2><p>Every build runs the engine tests: each English council's eight band charges are compared with Table 9 to the penny, and the Scottish bills, discounts and water charges are checked against a council's published 2026 to 2027 table. A failing test stops the build.</p>
+    <h2>Review cycle</h2><p>The tables are published each March for the year starting in April. We rebuild the data from the new files as soon as they appear, and re-read the rules on premiums and discounts when the governments change them, as Scotland did on 1 April 2026. Each page shows the date the tables were last read.</p>
+    <h2>Corrections</h2>
+    <ol><li>We open the official file or rule again.</li><li>We correct the data script, the parameter file or the engine, and add a test for the case.</li><li>The pages rebuild and show the new date.</li></ol>
+    <h2>Independence</h2><p>No council, agent, solicitor or company pays for or reviews what is published here, and the site carries no affiliate link. See also the <a href={route('method', lang)}>method</a>. Version: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

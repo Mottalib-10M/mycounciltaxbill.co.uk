@@ -1,0 +1,506 @@
+{
+  "_about": "Every statutory figure of the site lives here (RECETTE §4). Each one was read on the official page of `sources` on the date of `retrieved_at`. Council amounts by council are in councils-2026.json (generated from the official tables by scripts/data/build-councils.py).",
+  "year": 2026,
+  "taxYear": "2026/27",
+  "taxYearLong": "1 April 2026 to 31 March 2027",
+  "retrieved_at": "2026-10-19",
+  "valid_from": "2026-04-01",
+  "valid_to": "2027-03-31",
+  "daysInYear": 365,
+  "nextRelease": {
+    "england": "March 2027 (MHCLG, Council Tax levels set by local authorities in England 2027 to 2028)",
+    "wales": "March 2027 (Welsh Government, Council tax levels April 2027 to March 2028)",
+    "scotland": "March 2027 (Scottish Government, Council Tax by band 2027-28)"
+  },
+  "averages": {
+    "england": {
+      "bandD": 2391.52,
+      "bandDPrev": 2280.21,
+      "change": 0.0488,
+      "note": "Average area Band D including adult social care and parish precepts, England, 2026-27 (Table 2)"
+    },
+    "wales": {
+      "bandD": 2283.08,
+      "change": 0.052,
+      "note": "Average band D including police and community councils, Wales, 2026-27 (Table 1)"
+    },
+    "scotland": {
+      "bandD": 1653.44,
+      "note": "Scotland average Band D based on total Band D equivalents, 2026-27, water and sewerage excluded"
+    }
+  },
+  "referendum": {
+    "england": {
+      "core": 0.0299,
+      "asc": 0.02,
+      "total": 0.0499,
+      "districtCash": 5,
+      "policeCash": 15,
+      "fireCash": 5
+    },
+    "exceptions2627": [
+      {
+        "name": "North Somerset",
+        "limit": 0.09
+      },
+      {
+        "name": "Shropshire",
+        "limit": 0.09
+      },
+      {
+        "name": "Worcestershire County Council",
+        "limit": 0.09
+      },
+      {
+        "name": "Trafford",
+        "limit": 0.075
+      },
+      {
+        "name": "Warrington",
+        "limit": 0.075
+      },
+      {
+        "name": "Windsor and Maidenhead",
+        "limit": 0.075
+      },
+      {
+        "name": "Bournemouth, Christchurch and Poole",
+        "limit": 0.0675
+      }
+    ]
+  },
+  "bands": {
+    "england": {
+      "letters": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "num": [
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        15,
+        18
+      ],
+      "den": 9,
+      "valuationDate": "1 April 1991",
+      "ranges": [
+        "up to £40,000",
+        "£40,001 to £52,000",
+        "£52,001 to £68,000",
+        "£68,001 to £88,000",
+        "£88,001 to £120,000",
+        "£120,001 to £160,000",
+        "£160,001 to £320,000",
+        "more than £320,000"
+      ],
+      "upper": [
+        40000,
+        52000,
+        68000,
+        88000,
+        120000,
+        160000,
+        320000,
+        null
+      ]
+    },
+    "wales": {
+      "letters": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "num": [
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        15,
+        18,
+        21
+      ],
+      "den": 9,
+      "valuationDate": "1 April 2003",
+      "ranges": [
+        "up to £44,000",
+        "£44,001 to £65,000",
+        "£65,001 to £91,000",
+        "£91,001 to £123,000",
+        "£123,001 to £162,000",
+        "£162,001 to £223,000",
+        "£223,001 to £324,000",
+        "£324,001 to £424,000",
+        "more than £424,000"
+      ],
+      "upper": [
+        44000,
+        65000,
+        91000,
+        123000,
+        162000,
+        223000,
+        324000,
+        424000,
+        null
+      ]
+    },
+    "scotland": {
+      "letters": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "num": [
+        240,
+        280,
+        320,
+        360,
+        473,
+        585,
+        705,
+        882
+      ],
+      "den": 360,
+      "valuationDate": "1 April 1991",
+      "ranges": [
+        "under £27,000",
+        "£27,001 to £35,000",
+        "£35,001 to £45,000",
+        "£45,001 to £58,000",
+        "£58,001 to £80,000",
+        "£80,001 to £106,000",
+        "£106,001 to £212,000",
+        "more than £212,000"
+      ],
+      "upper": [
+        27000,
+        35000,
+        45000,
+        58000,
+        80000,
+        106000,
+        212000,
+        null
+      ],
+      "ratioChange": "1 April 2017 (bands E to H raised by 7.5 %, 12.5 %, 17.5 % and 22.5 %)"
+    }
+  },
+  "scottishWater": {
+    "year": "2026/27",
+    "increase": 0.0867,
+    "water": [
+      201.3,
+      234.85,
+      268.4,
+      301.95,
+      369.05,
+      436.15,
+      503.25,
+      603.9
+    ],
+    "sewerage": [
+      233.58,
+      272.51,
+      311.44,
+      350.37,
+      428.23,
+      506.09,
+      583.95,
+      700.74
+    ],
+    "ratioNum": [
+      240,
+      280,
+      320,
+      360,
+      440,
+      520,
+      600,
+      720
+    ],
+    "ratioDen": 360,
+    "ctrReductionMax": 0.35,
+    "note": "Same charge in every council area. The 25 % single occupier discount and the disabled band reduction apply to the water and waste water charges as well (Highland Council 2026 to 2027 table); a premium on a second or long-term empty home does not."
+  },
+  "discounts": {
+    "singlePerson": 0.25,
+    "allDisregarded": 0.5,
+    "disabledBandAFraction": 1,
+    "disabledBandANote": "A Band A home that qualifies is charged 5/9 of Band D instead of 6/9 (England and Wales) or 200/360 instead of 240/360 (Scotland): a cut of one sixth, about 17 %.",
+    "annexFamily": 0.5
+  },
+  "premiums": {
+    "england": {
+      "secondHomeMax": 1.0,
+      "secondHomeFrom": "2025-04-01",
+      "emptyFromYears": 1,
+      "emptyFromDate": "2024-04-01",
+      "emptyTiers": [
+        {
+          "years": 1,
+          "max": 1.0
+        },
+        {
+          "years": 5,
+          "max": 2.0
+        },
+        {
+          "years": 10,
+          "max": 3.0
+        }
+      ],
+      "exceptionMonths": 12
+    },
+    "wales": {
+      "max": 3.0,
+      "from": "2023-04-01",
+      "firstFrom": "2017-04-01",
+      "emptyFromYears": 1
+    },
+    "scotland": {
+      "default": 1.0,
+      "from": "2026-04-01",
+      "emptyFromYears": 1,
+      "minOccupationDays": 25
+    }
+  },
+  "instalments": {
+    "default": 10,
+    "onRequest": 12,
+    "requestBy": "15 April",
+    "rounding": "Each instalment except the first is the total divided by the number of instalments, rounded to the nearest pound; the first takes the difference."
+  },
+  "voa": {
+    "backdatingNote": "If the band is lowered after a challenge, the council refunds the difference for the whole period you were overcharged at that address.",
+    "newResidentMonths": 6
+  },
+  "sources": {
+    "mhclg_levels": {
+      "url": "https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027",
+      "label": {
+        "en": "MHCLG, Council Tax levels set by local authorities in England 2026 to 2027 (25 March 2026)"
+      }
+    },
+    "mhclg_release": {
+      "url": "https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027",
+      "label": {
+        "en": "MHCLG statistical release, Council Tax levels 2026 to 2027"
+      }
+    },
+    "wales_levels": {
+      "url": "https://www.gov.wales/council-tax-levels-april-2026-march-2027-html",
+      "label": {
+        "en": "Welsh Government, Council tax levels: April 2026 to March 2027"
+      }
+    },
+    "scot_datasets": {
+      "url": "https://www.gov.scot/publications/council-tax-datasets/",
+      "label": {
+        "en": "Scottish Government, Council tax datasets: Council Tax by band 2026-27"
+      }
+    },
+    "gov_bands": {
+      "url": "https://www.gov.uk/guidance/understand-how-council-tax-bands-are-assessed",
+      "label": {
+        "en": "Valuation Office Agency, Understand how Council Tax bands are assessed (band values for England and Wales)"
+      }
+    },
+    "voa_check": {
+      "url": "https://www.gov.uk/council-tax-bands",
+      "label": {
+        "en": "GOV.UK, Check your Council Tax band"
+      }
+    },
+    "voa_challenge": {
+      "url": "https://www.gov.uk/challenge-council-tax-band",
+      "label": {
+        "en": "GOV.UK, Challenge your Council Tax band"
+      }
+    },
+    "saa": {
+      "url": "https://www.saa.gov.uk/",
+      "label": {
+        "en": "Scottish Assessors Association, Council Tax band search"
+      }
+    },
+    "gov_who_pays": {
+      "url": "https://www.gov.uk/council-tax/who-has-to-pay",
+      "label": {
+        "en": "GOV.UK, Council Tax: who has to pay, discounts for people who are disregarded"
+      }
+    },
+    "gov_students": {
+      "url": "https://www.gov.uk/council-tax/discounts-for-full-time-students",
+      "label": {
+        "en": "GOV.UK, Council Tax discounts for full-time students"
+      }
+    },
+    "gov_disabled": {
+      "url": "https://www.gov.uk/council-tax/discounts-for-disabled-people",
+      "label": {
+        "en": "GOV.UK, Council Tax discounts for disabled people"
+      }
+    },
+    "gov_second_empty": {
+      "url": "https://www.gov.uk/council-tax/second-homes-and-empty-properties",
+      "label": {
+        "en": "GOV.UK, Council Tax: second homes and empty properties"
+      }
+    },
+    "mhclg_premiums": {
+      "url": "https://www.gov.uk/government/publications/long-term-empty-homes-and-second-homes-council-tax-premiums-and-exceptions/guidance-on-the-implementation-of-the-council-tax-premiums-on-long-term-empty-homes-and-second-homes",
+      "label": {
+        "en": "MHCLG, Guidance on the council tax premiums on long-term empty homes and second homes (1 November 2024)"
+      }
+    },
+    "gov_paying": {
+      "url": "https://www.gov.uk/council-tax/paying-your-bill",
+      "label": {
+        "en": "GOV.UK, Council Tax: paying your bill"
+      }
+    },
+    "leg_instalments": {
+      "url": "https://www.legislation.gov.uk/uksi/1992/613/schedule/1",
+      "label": {
+        "en": "Council Tax (Administration and Enforcement) Regulations 1992, Schedule 1 (instalments)"
+      }
+    },
+    "leg_lgfa_disregards": {
+      "url": "https://www.legislation.gov.uk/ukpga/1992/14/schedule/1",
+      "label": {
+        "en": "Local Government Finance Act 1992, Schedule 1 (persons disregarded for discount)"
+      }
+    },
+    "leg_lgfa_discounts": {
+      "url": "https://www.legislation.gov.uk/ukpga/1992/14/section/11",
+      "label": {
+        "en": "Local Government Finance Act 1992, section 11 (discounts)"
+      }
+    },
+    "leg_lgfa_premium": {
+      "url": "https://www.legislation.gov.uk/ukpga/1992/14/section/11B",
+      "label": {
+        "en": "Local Government Finance Act 1992, section 11B (higher amount for long-term empty dwellings, England)"
+      }
+    },
+    "leg_lgfa_ratios": {
+      "url": "https://www.legislation.gov.uk/ukpga/1992/14/section/5",
+      "label": {
+        "en": "Local Government Finance Act 1992, section 5 (band proportions)"
+      }
+    },
+    "leg_exempt": {
+      "url": "https://www.legislation.gov.uk/uksi/1992/558",
+      "label": {
+        "en": "Council Tax (Exempt Dwellings) Order 1992"
+      }
+    },
+    "leg_disabled": {
+      "url": "https://www.legislation.gov.uk/uksi/1992/554",
+      "label": {
+        "en": "Council Tax (Reductions for Disabilities) Regulations 1992"
+      }
+    },
+    "wales_premiums": {
+      "url": "https://www.gov.wales/council-tax-premiums-long-term-empty-and-second-homes-guidance-local-authorities-html",
+      "label": {
+        "en": "Welsh Government, Council tax premiums for long-term empty and second homes: guidance"
+      }
+    },
+    "wales_reform": {
+      "url": "https://www.gov.wales/find-out-about-how-we-are-reforming-council-tax",
+      "label": {
+        "en": "Welsh Government, Find out about how we are reforming Council Tax (updated 18 February 2025)"
+      }
+    },
+    "wales_act": {
+      "url": "https://www.legislation.gov.uk/asc/2024/6/contents",
+      "label": {
+        "en": "Local Government Finance (Wales) Act 2024"
+      }
+    },
+    "wales_statement": {
+      "url": "https://www.gov.wales/written-statement-update-council-tax-reform",
+      "label": {
+        "en": "Welsh Government, Written statement: update on council tax reform (15 May 2024)"
+      }
+    },
+    "scot_circular_2026": {
+      "url": "https://www.gov.scot/publications/local-government-finance-circular-6-2026-council-tax-on-second-and-long-term-empty-homes-guidance/pages/introduction/",
+      "label": {
+        "en": "Scottish Government, Local government finance circular 6/2026: second and long-term empty homes (25 March 2026)"
+      }
+    },
+    "scot_water": {
+      "url": "https://www.scottishwater.co.uk/Your-Home/Your-Charges/Your-Charges-2026-2027",
+      "label": {
+        "en": "Scottish Water, Your charges 2026-2027"
+      }
+    },
+    "highland_charges": {
+      "url": "https://www.highland.gov.uk/council-tax/council-tax-scottish-water-charges/2",
+      "label": {
+        "en": "Highland Council, Council Tax and Scottish Water charges 2026 to 2027"
+      }
+    },
+    "gov_ctr": {
+      "url": "https://www.gov.uk/council-tax-reduction",
+      "label": {
+        "en": "GOV.UK, Council Tax Reduction"
+      }
+    },
+    "voa_legal_right": {
+      "url": "https://www.gov.uk/challenge-council-tax-band/legal-right-to-make-a-challenge",
+      "label": {
+        "en": "GOV.UK, Challenge your Council Tax band: if you have a legal right to challenge"
+      }
+    },
+    "voa_band_review": {
+      "url": "https://www.gov.uk/challenge-council-tax-band/do-not-have-a-legal-right-to-make-a-challenge",
+      "label": {
+        "en": "GOV.UK, Challenge your Council Tax band: band review"
+      }
+    },
+    "voa_after": {
+      "url": "https://www.gov.uk/challenge-council-tax-band/after-you-make-challenge",
+      "label": {
+        "en": "GOV.UK, Challenge your Council Tax band: after you make a challenge"
+      }
+    },
+    "leg_annex": {
+      "url": "https://www.legislation.gov.uk/uksi/2013/2977/contents/made",
+      "label": {
+        "en": "Council Tax (Prescribed Classes of Dwellings and Reductions for Family Annexes) (England) Regulations 2013"
+      }
+    },
+    "leg_scot_ratios": {
+      "url": "https://www.legislation.gov.uk/ssi/2016/399/contents/made",
+      "label": {
+        "en": "Council Tax (Substitution of Proportion) (Scotland) Order 2016"
+      }
+    }
+  }
+}
