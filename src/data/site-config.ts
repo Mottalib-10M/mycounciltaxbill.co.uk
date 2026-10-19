@@ -1,6 +1,6 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://uk-council-tax.example";
-export const SITE_NAMES: Record<string, string> = {"en": "Bill by Band"};
+export const SITE_URL = "https://mycounciltaxbill.co.uk";
+export const SITE_NAMES: Record<string, string> = {"en": "My Council Tax Bill"};
 export const LANG_TAGS: Record<string, string> = {"en": "en-GB"};
 export const OG_LOCALES: Record<string, string> = {"en": "en_GB"};
 export const LOCALE_TAG = 'en-GB';
@@ -11,12 +11,12 @@ export const SITE_FOUNDED = '2026';
 export const LAST_UPDATED = '2026-10-19';
 export const AUTHOR_NAME = 'Radif Partners';
 export const AUTHOR_ROLE: Record<string, string> = {"en": "Independent publisher of council tax bill calculators for England, Wales and Scotland"};
-export const AUTHOR_DESC: Record<string, string> = {"en": "Radif Partners builds Bill by Band from the council tax tables the three governments publish each March: MHCLG's Tables 9 and 10 for the 296 billing authorities of England, the Welsh Government's figures for its 22 councils and the Scottish Government's Council Tax by band for 32 councils, plus Scottish Water's charges. The engine applies the band ratios of each nation, the 25 % and 50 % discounts, student and other exemptions, the Disabled Band Reduction and the second and empty homes premiums, each rule cited from legislation.gov.uk, GOV.UK, gov.wales or gov.scot. No council, agent or adviser pays for the site."};
+export const AUTHOR_DESC: Record<string, string> = {"en": "Radif Partners builds My Council Tax Bill from the council tax tables the three governments publish each March: MHCLG's Tables 9 and 10 for the 296 billing authorities of England, the Welsh Government's figures for its 22 councils and the Scottish Government's Council Tax by band for 32 councils, plus Scottish Water's charges. The engine applies the band ratios of each nation, the 25 % and 50 % discounts, student and other exemptions, the Disabled Band Reduction and the second and empty homes premiums, each rule cited from legislation.gov.uk, GOV.UK, gov.wales or gov.scot. No council, agent or adviser pays for the site."};
 /** Sujets sur lesquels l'editeur est competent (schema.org knowsAbout). Ce sont les
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"en": ["Council tax bands in England, Wales and Scotland", "Council tax single person discount", "Council tax disregards and exemptions", "Disabled Band Reduction Scheme", "Second homes and empty homes council tax premiums", "Scottish Water charges on council tax bills", "Challenging a council tax band with the Valuation Office Agency"]};
-export const CONTACT_EMAIL = "contact@uk-council-tax.example";
+export const CONTACT_EMAIL = "contact@mycounciltaxbill.co.uk";
 export const THEME_COLOR = '#1F3A68';
 export const LOGO_SYMBOL = 'CT';
 export const BING_VERIFY_CODE = '';

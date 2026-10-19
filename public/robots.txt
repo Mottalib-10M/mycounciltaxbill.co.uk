@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /*?*
 
-Sitemap: https://uk-council-tax.example/sitemap-index.xml
+Sitemap: https://mycounciltaxbill.co.uk/sitemap-index.xml

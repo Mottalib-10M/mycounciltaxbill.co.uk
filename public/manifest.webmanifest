@@ -1,6 +1,6 @@
 {
- "name": "Bill by Band",
- "short_name": "Bill by Band",
+ "name": "My Council Tax Bill",
+ "short_name": "Council Tax",
  "description": "Council tax for 2026/27 worked out for each of the 350 councils of England, Wales and Scotland: every band, single person discount, exemptions, second and empty homes, Scottish water.",
  "start_url": "/en/",
  "display": "standalone",

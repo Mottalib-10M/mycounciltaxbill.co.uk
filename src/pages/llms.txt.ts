@@ -5,7 +5,7 @@ import { route } from '../i18n/routes';
 import { SITE_URL, LAST_UPDATED } from '../data/site-config';
 export const GET: APIRoute = () => {
   const lines = [
-    '# Bill by Band',
+    '# My Council Tax Bill',
     '',
     `> Council tax bills for 2026/27 in England, Wales and Scotland, worked out in the browser for each of the 350 councils and every band: single person discount, people disregarded, student exemption, Disabled Band Reduction, second homes and long-term empty homes premiums, Scottish Water charges, 10 or 12 instalments. Band D figures from MHCLG (Tables 9 and 10, 25 March 2026), the Welsh Government and the Scottish Government; rules from legislation.gov.uk, GOV.UK, gov.wales and gov.scot (last read ${LAST_UPDATED}). Published by Radif Partners, an independent publisher; not a council, not the Valuation Office Agency.`,
     '',
