@@ -13,7 +13,7 @@ export default definePage({
   title: 'Council Tax on Annexes 2026/27: Exempt, Half or Full Charge',
   description: 'Council tax on an annex or granny flat in 2026/27: exemption for a dependent relative, the 50 % reduction for family use in England, letting it out, premiums.',
   h1: 'Council tax on an annex',
-  intro: 'A self-contained annex usually has its own band and its own bill. Who lives in it decides what that bill is.',
+  intro: 'A self-contained annex usually has its own council tax band and its own bill. Who lives in it decides what that bill is.',
   resume: (h) => {
     const full = h.E.bill({ council: 'east-devon', band: 0 }).annual;
     return `A self-contained annex, such as a granny flat over the garage or a converted outbuilding with its own kitchen and bathroom, is normally a separate dwelling for council tax, with its own band. What it pays depends on who uses it. An annex that is the home of a dependent relative of the main household, aged 65 or over or severely mentally impaired or substantially and permanently disabled, is exempt under Class W. In England, an annex lived in by any other relative of the person who pays for the main house, or used as part of the main home, gets a ${h.pc(h.P.discounts.annexFamily)} reduction under regulations in force since 1 April 2014. An annex let to someone outside the family pays the full charge. In East Devon a Band A annex costs ${h.m2(full)} for ${h.P.taxYear}, ${h.m2(full * (1 - h.P.discounts.annexFamily))} with the family reduction, and nothing when it is exempt.`;
@@ -37,7 +37,7 @@ export default definePage({
 <p><strong>3. The main household uses it: half in England.</strong> An annex used by the people in the main house as part of their own home, as a guest suite or a teenager's den, also gets the ${h.pc(h.P.discounts.annexFamily)} reduction, even when nobody sleeps there.</p>
 <p><strong>4. It is let to someone else: full charge.</strong> A tenant who is not a relative pays the full band charge on the annex, less any discount of their own, such as the single person discount.</p>
 
-<h2>Discounts on top</h2>
+<h2>Council tax discounts on top</h2>
 <p>The ${h.pc(h.P.discounts.annexFamily)} annex reduction is worked out after any other discount, so a relative who lives alone in the annex gets both: first 25 % off, then half of what is left. Band A annexes in five councils with many of them, ${h.P.taxYear}:</p>
 ${h.table(['Council', 'Band A, full', 'Relative living there', 'Relative living alone'], rows, 'England. Annex as a separate dwelling with its own band.', ['l', 'r', 'r', 'r'])}
 <p>The calculator above gives the figure for any council, band and use.</p>

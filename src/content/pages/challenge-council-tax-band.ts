@@ -13,7 +13,7 @@ export default definePage({
   title: 'Challenge Council Tax Band: Evidence, Deadlines and Refund',
   description: 'Challenge a council tax band in England, Wales or Scotland: legal right or band review, the evidence the Valuation Office accepts, deadlines, and the refund.',
   h1: 'Challenging your council tax band',
-  intro: 'Worth doing when the evidence is strong, and worth thinking twice about when it is not.',
+  intro: 'A challenge to your council tax band is worth doing when the evidence is strong, and worth thinking twice about when it is not.',
   resume: (h) => {
     const V = h.P.voa;
     const d = h.E.bandCharge(h.c('bristol'), 3), c = h.E.bandCharge(h.c('bristol'), 2);
@@ -55,7 +55,7 @@ ${h.table(['Council', 'Band change', 'Saving a year', 'Over six years'], rows, `
 <p>Today's value of your home is not evidence, and the Valuation Office says it will not treat average prices from property websites as strong evidence either. A good way to build the case is to look up your street on the ${h.a('check-council-tax-band', 'band search service')}: if every identical semi on one side is in Band B and yours is in Band C, you have the start of a case. If the neighbours are all in your band, the case is weak.</p>
 ${h.box('The risk', `<p>The Valuation Office's own blog lists challenges among the reasons a band can increase: if the sales and the bands of similar homes point to a higher value, the band goes up, and a change after one challenge can lead it to review similar homes nearby (${h.src('voa_blog_increase', 'Valuation Office blog, March 2026')}). An increase is not backdated, but it applies to every later year.</p>`, 'warning')}
 
-<h2>Making the challenge in England and Wales</h2>
+<h2>Making a council tax band challenge in England and Wales</h2>
 <p>The challenge is made online from the Valuation Office's band search service: find the address, open its band, and choose to challenge it (${h.src('voa_challenge', 'GOV.UK, challenge your Council Tax band')}). You give your name, whether you own or rent, the date from which the change should apply, and your evidence. Tenants can challenge too, since they are the taxpayer.</p>
 <p>The Valuation Office usually confirms receipt within a few days, and in any case within 28 days. A proposal is decided within about ${V.proposalMonthsDecision} months; a band review can take up to ${V.reviewMonthsDecision} months (${h.src('voa_after', 'GOV.UK, after you make a challenge')}). Keep paying the bill as it stands in the meantime.</p>
 

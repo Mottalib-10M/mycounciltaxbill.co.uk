@@ -13,7 +13,7 @@ export default definePage({
   title: 'Wiltshire Council Tax 2026/27: Bands, Parishes and Annexes',
   description: 'Wiltshire council tax 2026/27 for every band, why town and parish precepts make bills differ from village to village, family annex discounts and nearby areas.',
   h1: 'Wiltshire council tax 2026/27',
-  intro: 'One unitary council for the whole county, and more than two hundred town and parish councils that each add their own precept.',
+  intro: 'One unitary council for the whole of Wiltshire, and more than two hundred town and parish councils that each add their own precept.',
   resume: (h) => {
     const c = h.c('wiltshire'); const ch = h.E.change(c)!; const p = c.parts;
     const e = h.E.bill({ council: 'wiltshire', band: 4 });
@@ -42,7 +42,7 @@ ${h.bandTable('wiltshire')}
 <h2>Town and parish councils</h2>
 <p>Wiltshire Council runs the main services across the whole county, from schools to waste collection, while each town or parish council decides its own budget for local facilities and sets a precept to pay for it. A town council that runs open spaces or community buildings needs more than a small village that funds a hall and a clerk. The result is a wide spread of local charges on top of the ${h.m2(c.bandD - p.parish)} that every Band D home pays to Wiltshire Council, the police and fire. Your annual bill names the parish and shows its line separately, so it is the best way to see what you pay; the calculator above uses the county average.</p>
 
-<h2>Wiltshire and its neighbours</h2>
+<h2>Wiltshire council tax beside its neighbours</h2>
 <p>The comparison below includes the parish column, which explains part of the differences. Wiltshire ranks ${r.rank} of ${r.of} South West councils by Band D, from the dearest, and the ${h.a('region-south-west', 'South West page')} has the full list.</p>
 ${h.table(['Council', 'Parish average at D', 'Band D', 'Band E', 'Change on 2025/26'], rows, `${h.P.taxYear}, two adults, main home, from the ${h.src('mhclg_levels', 'government council tax levels')}.`, ['l', 'r', 'r', 'r', 'r'])}
 

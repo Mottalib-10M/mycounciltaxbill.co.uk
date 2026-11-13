@@ -13,7 +13,7 @@ export default definePage({
   title: 'Wales Council Tax 2026/27: Every Council, Bands A to I',
   description: 'Wales council tax 2026/27 for all 22 councils, from Merthyr Tydfil to Cardiff, with Band A, D and I, the change on last year and the police area share.',
   h1: 'Council tax in Wales 2026/27, council by council',
-  intro: 'Nine bands, four police areas and a gap of several hundred pounds at Band D between the valleys and the capital.',
+  intro: 'Nine council tax bands, four police areas and a gap of several hundred pounds at Band D between the valleys and the capital.',
   resume: (h) => {
     const L = h.E.inRegion('Wales'); const s = [...L].sort((a, b) => b.bandD - a.bandD); const hi = s[0], lo = s[s.length - 1];
     const A = h.P.averages.wales;
@@ -35,7 +35,7 @@ export default definePage({
     const byParish = [...L].sort((a, b) => b.parts.parish - a.parts.parish);
     const sw = h.c('swansea'); const swOne = h.E.bill({ council: 'swansea', band: 2, household: 'one' });
     return `
-<h2>All Welsh councils, ${h.P.taxYear}</h2>
+<h2>Council tax in all Welsh councils, ${h.P.taxYear}</h2>
 ${h.councilTable(L, `Two adults, main home, ${h.P.taxYear}. Police and average community council precepts included. Sorted from the highest Band D.`)}
 <p>The figures come from the ${h.src('wales_levels', 'Welsh Government table of council tax levels for 2026 to 2027')}. The last band shown is Band I, which exists only in Wales and covers homes worth more than ${h.m(h.P.bands.wales.upper[7]!)} on the 2003 valuation date (${h.src('gov_bands', 'band values for Wales')}).</p>
 

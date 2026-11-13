@@ -13,7 +13,7 @@ export default definePage({
   title: 'Westminster Council Tax 2026/27: Bands and Queen\'s Park',
   description: 'Westminster council tax 2026/27 for Bands A to H, the extra precepts in Queen\'s Park and Montpelier Square, and the premiums on second homes and empty flats.',
   h1: 'Westminster council tax 2026/27',
-  intro: 'One of the two lowest Band D charges in England, applied to a borough where large and valuable homes are common.',
+  intro: 'One of the two lowest Band D council tax charges in England, applied to a borough where large and valuable homes are common.',
   resume: (h) => {
     const c = h.c('westminster'); const ch = h.E.change(c)!; const p = c.parts;
     const g = h.E.bill({ council: 'westminster', band: 6 });
@@ -36,7 +36,7 @@ export default definePage({
     const sec = h.E.bill({ council: 'westminster', band: 7, occupancy: 'second' });
     const empty10 = h.E.bill({ council: 'westminster', band: 5, occupancy: 'empty', emptyYears: 10 });
     return `
-<h2>Westminster band charges</h2>
+<h2>Westminster council tax band charges</h2>
 ${h.bandTable('westminster')}
 <p>These are the charges for the unparished city. The figure for each band is Band D multiplied by the fraction set in the ${h.a('council-tax-bands', 'band rules')}, so the gap between bands widens as you go up: Band H pays three times Band A. A couple in a Band H mansion flat therefore pays ${h.m(h.E.bandCharge(c, 7) - h.E.bandCharge(c, 0))} more than a couple in a Band A studio on the same street.</p>
 

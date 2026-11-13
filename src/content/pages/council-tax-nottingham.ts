@@ -16,7 +16,7 @@ export default definePage({
   title: 'Nottingham Council Tax 2026/27: Bands and Big City Ranking',
   description: 'Nottingham council tax 2026/27 for Bands A to H, why its Band D is the highest of the large English cities, the police and fire shares and the county gap.',
   h1: 'Nottingham council tax 2026/27',
-  intro: 'The dearest Band D of England\'s large regional cities, even after a rise in the council\'s own share below the usual limit.',
+  intro: 'Nottingham has the dearest Band D of England\'s large regional cities, even after a rise in the council\'s own share below the usual limit.',
   resume: (h) => {
     const c = h.c('nottingham'); const ch = h.E.change(c)!; const a = h.E.bill({ council: 'nottingham', band: 0 });
     const L = CITIES.map((id) => h.c(id)); const r = h.E.rankIn(c, L);
@@ -36,7 +36,7 @@ export default definePage({
     const rows = L.map((x) => [x.id === 'nottingham' ? '<strong>Nottingham</strong>' : h.ca(x.id), h.m2(h.E.bandCharge(x, 0)), h.m2(x.bandD), h.pc(h.E.change(x)!.rate, 1)]);
     const notts = NOTTS.map((id) => h.c(id)); const hi = [...notts].sort((x, y) => y.bandD - x.bandD)[0];
     return `
-<h2>Nottingham band charges</h2>
+<h2>Nottingham council tax band charges</h2>
 ${h.bandTable('nottingham')}
 <p>Nottingham has no parish councils, so this table is exact for every address inside the city boundary. The second column gives the fixed fraction of Band D for each band: a Band H home pays three times as much as a Band A home, whatever the house is worth today. The single adult column applies the national discount of a quarter, which a household can claim whenever only one adult counts, even if children or disregarded adults live there too.</p>
 

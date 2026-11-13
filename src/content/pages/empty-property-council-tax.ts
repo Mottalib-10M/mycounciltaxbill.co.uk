@@ -29,7 +29,7 @@ export default definePage({
     const ids = ['blackpool', 'kingston-upon-hull', 'stoke-on-trent', 'blaenau-gwent', 'inverclyde'];
     const rows = ids.filter((id) => { try { h.c(id); return true; } catch { return false; } }).map((id) => { const c = h.c(id); const r = (y: number) => h.m2(h.E.bill({ council: id, band: 0, occupancy: 'empty', emptyYears: y }).annual); return [h.ca(id), r(0.5), r(2), r(6), r(11)]; });
     return `
-<h2>When an empty home is exempt</h2>
+<h2>When an empty property is exempt from council tax</h2>
 <p>The Council Tax (Exempt Dwellings) Order 1992 lists the classes of empty home on which nothing is due (${h.src('leg_exempt', 'Exempt Dwellings Order 1992')}, ${h.src('gov_second_empty', 'GOV.UK, second homes and empty properties')}). The main ones are:</p>
 <ul>
 <li><strong>After a death</strong> (Class F): until probate or letters of administration are granted, and then for up to six months while the home stays empty and in the deceased's name;</li>

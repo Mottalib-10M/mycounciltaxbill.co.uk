@@ -13,7 +13,7 @@ export default definePage({
   title: 'West Midlands Council Tax 2026/27: 30 Councils by Band',
   description: 'West Midlands council tax 2026/27 for 30 councils, Dudley to Walsall: Bands A, D and H, the 9 % rises allowed in Shropshire and Worcestershire, county shares.',
   h1: 'West Midlands council tax 2026/27',
-  intro: 'Seven metropolitan boroughs, four unitary councils and three two-tier counties, two of which were allowed to raise bills by up to nine per cent.',
+  intro: 'The West Midlands has seven metropolitan boroughs, four unitary councils and three two-tier counties, two of which were allowed to raise council tax by up to nine per cent.',
   resume: (h) => {
     const L = h.E.inRegion('West Midlands'); const s = [...L].sort((a, b) => a.bandD - b.bandD); const lo = s[0], hi = s[s.length - 1];
     const ex = h.P.referendum.exceptions2627.filter((e) => /Shropshire|Worcestershire/.test(e.name));
@@ -43,7 +43,7 @@ ${h.councilTable(L, `Two adults, main home, ${h.P.taxYear}. County, police, fire
 <h2>Staffordshire and Warwickshire</h2>
 <p>Staffordshire's eight districts and Warwickshire's five each pay their county's share plus their own. ${h.ca('stoke-on-trent', 'Stoke-on-Trent')}, a unitary city inside Staffordshire, has one of the lowest Band D charges in the region at ${h.m2(h.c('stoke-on-trent').bandD)}, and most of its homes are in Band A.</p>
 
-<h2>What a typical home pays</h2>
+<h2>What a typical West Midlands home pays in council tax</h2>
 <p>Band D is a poor guide to the bills most households in the region receive. In the Black Country and Stoke-on-Trent most homes are in Bands A and B, which pay six and seven ninths of Band D; in Solihull, Warwickshire and the rural districts of Worcestershire and Shropshire many more are in Bands D to F. A Band B home in ${h.ca('sandwell', 'Sandwell')} pays ${h.m2(h.E.bandCharge(h.c('sandwell'), 1))} for ${h.P.taxYear}, a Band E home in ${h.ca('stratford-on-avon', 'Stratford-on-Avon')} ${h.m2(h.E.bandCharge(h.c('stratford-on-avon'), 4))}. The table above shows Band A and the top band for each council, so you can see both ends of the scale before choosing your own band in the calculator.</p>
 <p>The single person discount, the student exemption and the Disabled Band Reduction apply in the same way in every council of the region; only the premiums on second and empty homes depend on each council's own decision.</p>
 

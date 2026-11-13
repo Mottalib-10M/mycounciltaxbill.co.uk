@@ -13,7 +13,7 @@ export default definePage({
   title: 'Council Tax Disabled Band Reduction 2026/27: One Band Lower',
   description: 'Disabled Band Reduction for council tax 2026/27: the room, bathroom or wheelchair space that qualifies, Band A rule, Scottish water charges and what it saves.',
   h1: 'Disabled Band Reduction: one band lower on the bill',
-  intro: 'Not a benefit and not means tested: a reduction for homes that are larger because a disabled person lives there.',
+  intro: 'Not a benefit and not means tested: a council tax reduction for homes that are larger because a disabled person lives there.',
   resume: (h) => {
     const s = h.c('stockport'), full = h.E.bill({ council: 'stockport', band: 3 }), red = h.E.bill({ council: 'stockport', band: 3, disabled: true });
     return `The Disabled Band Reduction charges council tax at the band below your own when a disabled adult or child lives in the home and it has a feature they need: an extra bathroom, kitchen or other room used mainly by them, or extra space for using a wheelchair indoors. It is set out in the Council Tax (Reductions for Disabilities) Regulations 1992 and applies in England, Wales and Scotland. Income and savings do not matter, and the disabled person does not have to be the one who pays. In ${s.name}, a Band D home that qualifies is charged as Band C, ${h.m2(red.annual)} instead of ${h.m2(full.annual)} for ${h.P.taxYear}, a saving of ${h.m(full.annual - red.annual)}. Homes already in Band A cannot go lower, so they get a reduction of one sixth of the Band A charge instead, about 17 %. You must apply to your council, which may visit the home.`;
@@ -39,7 +39,7 @@ export default definePage({
 </ul>
 <p>The test is need, not convenience. The regulations ask whether the feature is essential, or of major importance, to the disabled person's wellbeing because of the nature and extent of the disability (${h.src('leg_disabled', 'Council Tax (Reductions for Disabilities) Regulations 1992')}). A spare room used as an office does not qualify; the same room used for a hoist and a care bed does.</p>
 
-<h2>What it saves</h2>
+<h2>What the Disabled Band Reduction saves</h2>
 <p>The reduction is the gap between your band and the one below it. That gap is worth more in higher bands, because the bands widen at the top of the scale. Band D homes in five councils, for ${h.P.taxYear}:</p>
 ${h.table(['Council', 'Band D', 'Charged as Band C', 'Saving'], rows, 'Two adults, main home. Scottish figures include water and waste water.', ['l', 'r', 'r', 'r'])}
 <p>The calculator above gives the figure for any council and band, before any other discount.</p>

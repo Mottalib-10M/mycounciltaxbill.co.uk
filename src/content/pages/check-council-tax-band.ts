@@ -13,7 +13,7 @@ export default definePage({
   title: 'Check Council Tax Band by Postcode: Read It, Compare It',
   description: 'Check the council tax band of any home by postcode in England, Wales or Scotland, read the result, compare it with neighbours and price the band for 2026/27.',
   h1: 'Checking a council tax band, and what to do with the result',
-  intro: 'The search is free and public. The useful part is what you compare the result with.',
+  intro: 'The search to check a council tax band by postcode is free and public. The useful part is what you compare the result with.',
   resume: (h) => {
     const k = h.c('kirklees');
     return `You can check the council tax band of any home in England or Wales on the Valuation Office's free search service on GOV.UK, by postcode or address, and of any home in Scotland on the Scottish Assessors Association website. The result gives the band and the council that bills it. Checking your own band takes a minute; the real value of the search is that it shows every other home on the street, so you can see whether yours sits in the same band as identical neighbours. A home one band too high costs the gap between two band charges every year: in ${k.name}, moving from Band C to Band B would save ${h.m(h.E.bandCharge(k, 2) - h.E.bandCharge(k, 1))} in ${h.P.taxYear} for two adults. Searching is not a challenge and carries no risk; asking for a review is a separate step, which can also end with a higher band.`;
@@ -26,7 +26,7 @@ export default definePage({
   body: (h) => {
     const ex = ['kirklees', 'east-riding-of-yorkshire', 'north-somerset', 'conwy'].map((id) => { const c = h.c(id); return [h.ca(id), h.m2(h.E.bandCharge(c, 1)), h.m2(h.E.bandCharge(c, 2)), h.m2(h.E.bandCharge(c, 3)), h.m(h.E.bandCharge(c, 2) - h.E.bandCharge(c, 1))]; });
     return `
-<h2>Where to search</h2>
+<h2>Where to check your council tax band by postcode</h2>
 <ul>
 <li><strong>England and Wales:</strong> the "Check your Council Tax band" service on GOV.UK, run by the Valuation Office (${h.src('voa_check', 'GOV.UK, check your Council Tax band')}). Search by postcode or by address.</li>
 <li><strong>Scotland:</strong> the Scottish Assessors Association portal, which covers all 32 councils and also shows the assessor responsible for each area (${h.src('saa', 'Scottish Assessors Association')}).</li>

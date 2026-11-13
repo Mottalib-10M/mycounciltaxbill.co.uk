@@ -13,7 +13,7 @@ export default definePage({
   title: 'Birmingham Council Tax 2026/27: Bands A to H and Your Bill',
   description: 'Birmingham council tax 2026/27 for every band, from Band A to H, with the West Midlands police and fire shares, the 25 % discount and 10 or 12 monthly payments.',
   h1: 'Birmingham council tax 2026/27',
-  intro: 'What a home in Birmingham pays this year, band by band, and where each pound goes.',
+  intro: 'What a home in Birmingham pays in council tax this year, band by band, and where each pound goes.',
   resume: (h) => {
     const c = h.c('birmingham'); const ch = h.E.change(c)!; const b = h.E.bill({ council: 'birmingham', band: 1 });
     const pl = h.E.instalmentPlan(b.annual, 10);

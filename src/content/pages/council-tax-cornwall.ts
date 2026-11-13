@@ -13,7 +13,7 @@ export default definePage({
   title: 'Cornwall Council Tax 2026/27: Bands, Parishes, Second Homes',
   description: 'Cornwall council tax 2026/27 for each band, the town and parish precepts, the Devon and Cornwall police share and the 100 % premium on furnished second homes.',
   h1: 'Cornwall council tax 2026/27',
-  intro: 'A single unitary council, a town or parish council in almost every community, and a doubled bill for second homes that continues this year.',
+  intro: 'A single unitary council, a town or parish council in almost every community, and a doubled council tax bill for second homes that continues this year.',
   resume: (h) => {
     const c = h.c('cornwall'); const ch = h.E.change(c)!; const b = h.E.bill({ council: 'cornwall', band: 2 });
     return `The average Band D council tax in Cornwall for ${h.P.taxYear} is ${h.m2(c.bandD)}, up ${h.pc(ch.rate, 1)} from ${h.m2(c.bandDPrev!)}. Cornwall Council raised its own part by ${h.pc(h.P.referendum.england.total)}, including the ${h.pc(h.P.referendum.england.asc)} adult social care precept, and the Devon and Cornwall Police and Crime Commissioner added ${h.m(h.P.referendum.england.policeCash)} at Band D, taking the police share to ${h.m2(c.parts.police)}. What makes Cornwall unusual is the weight of local councils: its ${c.parishes} parishes add an average of ${h.m2(c.parts.parish)} at Band D, far more than in any city, so the bill differs noticeably from one town to the next. A Band C home with two adults pays ${h.m2(b.annual)} on the Cornwall average. A furnished second home pays double, because the council has kept the ${h.pc(h.P.premiums.england.secondHomeMax)} premium for ${h.P.taxYear}, giving ${h.m2(h.E.bill({ council: 'cornwall', band: 2, occupancy: 'second' }).annual)} in Band C.`;
@@ -40,7 +40,7 @@ ${h.bandTable('cornwall')}
 <h2>Town and parish councils</h2>
 <p>The government table counts ${c.parishes} parishes in Cornwall, ranging from large town councils to small rural parishes with a handful of councillors. Parish precepts make up ${h.pc(share, 1)} of the average Band D bill, against well under one per cent in most large cities. They are not limited by the government's referendum rules this year, so a town council can raise its charge by more than Cornwall Council itself. The county council keeps ${h.m2(p.council)}, including ${h.m2(p.asc!)} for adult social care.</p>
 
-<h2>Cornwall against its neighbours</h2>
+<h2>Cornwall council tax against its neighbours</h2>
 ${h.table(['Council', 'Band D', 'Parish average', 'Police', 'Fire'], rows, `${h.P.taxYear}, Band D, two adults, main home.`, ['l', 'r', 'r', 'r', 'r'])}
 <p>The Isles of Scilly, policed by the same commissioner, has its own council and the lowest Band D in the region. Plymouth, across the Tamar, has no parishes but pays a separate fire precept. The ${h.a('region-south-west', 'South West overview')} compares every council from Gloucestershire to Dorset.</p>
 

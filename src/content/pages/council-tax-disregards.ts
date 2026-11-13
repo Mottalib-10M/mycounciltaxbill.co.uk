@@ -13,7 +13,7 @@ export default definePage({
   title: 'Council Tax Disregards 2026/27: Who Does Not Count as Adult',
   description: 'Council tax disregards 2026/27: carers, apprentices, school leavers, severe mental impairment, hospital and care home stays, and the 25 % or 50 % they give.',
   h1: 'Who is disregarded for council tax',
-  intro: 'The bill assumes two adults. Every adult on this list is invisible to it.',
+  intro: 'The council tax bill assumes two adults. Every adult on this list is invisible to it.',
   resume: (h) => {
     const two = h.E.bill({ council: 'plymouth', band: 1 }), one = h.E.bill({ council: 'plymouth', band: 1, household: 'one' }), none = h.E.bill({ council: 'plymouth', band: 1, household: 'none' });
     return `Being "disregarded" for council tax means you are not counted when the council works out how many adults live in a home. The groups are listed in Schedule 1 of the Local Government Finance Act 1992 and the orders made under it: full-time students and student nurses, apprentices and young trainees, 18 and 19 year olds still in education, people who are severely mentally impaired, many live-in carers, people in hospital, care homes or prison, and a few others. The bill is based on two adults who count. If only one adult counts, it falls by ${h.pc(h.P.discounts.singlePerson)}; if nobody counts, by ${h.pc(h.P.discounts.allDisregarded)}. In a Band B home in Plymouth that is ${h.m2(two.annual)}, ${h.m2(one.annual)} or ${h.m2(none.annual)} for ${h.P.taxYear}. Being disregarded does not depend on income, and the council has to be told: it does not know who lives with you.`;
@@ -29,7 +29,7 @@ export default definePage({
     const ex = [['derby', 1], ['wakefield', 0], ['swindon', 2], ['carmarthenshire', 3], ['dundee-city', 1]] as Array<[string, number]>;
     const rows = ex.map(([id, b]) => { const c = h.c(id); return [h.ca(id), `Band ${h.E.letters(c.nation)[b]}`, h.m2(h.E.bill({ council: id, band: b }).annual), h.m2(h.E.bill({ council: id, band: b, household: 'one' }).annual), h.m2(h.E.bill({ council: id, band: b, household: 'none' }).annual)]; });
     return `
-<h2>The full list</h2>
+<h2>The full list of council tax disregards</h2>
 <p>Schedule 1 of the 1992 Act sets out who is disregarded (${h.src('leg_lgfa_disregards', 'Local Government Finance Act 1992, Schedule 1')}). In plain terms:</p>
 <ol>
 <li><strong>Young people.</strong> Anyone aged 18 for whom child benefit is still paid; 18 and 19 year olds in full-time education up to A level; school and college leavers under 20 between leaving after 30 April and 1 November.</li>

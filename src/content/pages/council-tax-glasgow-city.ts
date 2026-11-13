@@ -45,7 +45,7 @@ ${h.table(['Band', 'Ratio to D', 'Council tax', 'Water and waste water', 'Total 
 <h2>Scottish ratios are not the English ones</h2>
 <p>In England, Band E pays eleven ninths of Band D. In Scotland it pays ${S.num[4]}/${S.den}, and Band H pays ${S.num[7]}/${S.den}, close to two and a half times Band D. The ${h.src('leg_scot_ratios', '2016 order that changed the proportions')} raised Bands E to H and left A to D alone. In a city where much of the housing is flats, the change mostly reached the larger houses. The Scottish values are also lower: Band A covers homes worth ${S.ranges[0]} in 1991, against ${h.P.bands.england.ranges[0]} in England.</p>
 
-<h2>Glasgow among its neighbours</h2>
+<h2>Glasgow council tax among its neighbours</h2>
 ${h.table(['Council', 'Band C', 'Band D', 'Change on 2025/26'], nrows, `${h.P.taxYear}, council tax only, before water and waste water.`, ['l', 'r', 'r', 'r'])}
 <p>The full list of ${h.E.inNation('scotland').length} councils is on the ${h.a('region-scotland', 'Scotland page')}, and the ${h.a('scotland-council-tax', 'guide to council tax in Scotland')} covers the rules that differ from England. ${h.ca('city-of-edinburgh')} charges ${h.m2(h.c('city-of-edinburgh').bandD)} at Band D for comparison.</p>
 

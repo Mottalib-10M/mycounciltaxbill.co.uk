@@ -13,7 +13,7 @@ export default definePage({
   title: 'Cardiff Council Tax 2026/27: Bands A to I Explained',
   description: 'Cardiff council tax 2026/27 for all nine Welsh bands, the police share, community councils, premiums on second homes and what the 2028 revaluation means.',
   h1: 'Cardiff council tax 2026/27',
-  intro: 'The capital of Wales charges one of the lowest Band D rates in the country, on a scale of nine bands that England does not have.',
+  intro: 'Cardiff, the capital of Wales, charges one of the lowest Band D council tax rates in the country, on a scale of nine bands that England does not have.',
   resume: (h) => {
     const c = h.c('cardiff'); const ch = h.E.change(c)!; const p = c.parts;
     const W = h.E.inNation('wales'); const r = h.E.rankIn(c, W);

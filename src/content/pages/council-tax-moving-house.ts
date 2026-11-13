@@ -13,7 +13,7 @@ export default definePage({
   title: 'Council Tax When Moving House: Daily Charge and Who Pays',
   description: 'Council tax when moving house in 2026/27: the bill split by the day, who is liable on moving day, telling both councils, and paying for two homes at once.',
   h1: 'Council tax when you move house',
-  intro: 'Council tax is charged day by day, so a move splits the year between two bills. This is how each one is worked out.',
+  intro: 'Council tax is charged day by day, so moving house splits the year between two bills. This is how each one is worked out.',
   resume: (h) => {
     const P = h.P; const old = h.E.bill({ council: 'leeds', band: 2 }), nw = h.E.bill({ council: 'cardiff', band: 3 });
     const dOld = h.E.daysBetween(P.valid_from, '2026-08-31'), dNew = h.E.daysBetween('2026-09-01', P.valid_to);
@@ -72,7 +72,7 @@ ${h.table(['Move', 'Moving day', 'Days old / new', 'Old council', 'New council',
 <p><strong>The new council</strong> opens an account and sends a demand notice. The number of instalments depends on when the notice is issued, under ${h.src('leg_instalments', 'Schedule 1 of the 1992 instalment rules')}: a notice issued from May onward gets fewer payments than the usual ${P.instalments.default}, and one issued between January and March is payable in a single sum. The page on ${h.a('council-tax-monthly-payments', 'monthly payments')} works through those rules, including the right to ask for ${P.instalments.onRequest} instalments in England and Wales.</p>
 ${h.box('Discounts do not move with you', `<p>A single person discount, a student exemption or a Disabled Band Reduction is attached to one account at one address. In Nottingham a Band A home costs ${h.m2(nott.annual)} for two adults and ${h.m2(nottOne.annual)} for one; a person who moves there alone on 20 July and forgets to claim pays the difference for ${dN} days, ${h.m2(h.E.forDays(nott.annual - nottOne.annual, dN))}, until the claim is backdated.</p>`, 'tip')}
 
-<h2>Paying for two homes during the move</h2>
+<h2>Paying council tax on two homes when moving house</h2>
 <p>Buyers who complete on a new home before selling the old one, or tenants whose leases overlap, are often liable for two properties for a while. You live in one, so that one is billed with the normal rules. The other is nobody's main home, so it is billed to you as its owner or leaseholder, and the amount depends on its state and on the council:</p>
 <ul>
 <li>an empty home that is unfurnished is normally charged in full, unless the council grants a local discount; after a year empty a premium can apply, as the page on ${h.a('empty-property-council-tax', 'empty properties')} explains;</li>

@@ -13,7 +13,7 @@ export default definePage({
   title: 'Newcastle Council Tax 2026/27: Bands and Tyneside Compared',
   description: 'Newcastle upon Tyne council tax 2026/27 for every band, the six parish precepts, the police and fire shares, and how it compares with Gateshead and Sunderland.',
   h1: 'Newcastle upon Tyne council tax 2026/27',
-  intro: 'A city bill with a few parishes on its northern edge and police and fire shares common to Tyneside.',
+  intro: 'A city council tax bill with a few parishes on its northern edge and police and fire shares common to Tyneside.',
   resume: (h) => {
     const c = h.c('newcastle-upon-tyne'); const ch = h.E.change(c)!; const NE = h.E.inRegion('North East'); const r = h.E.rankIn(c, NE);
     const a = h.E.bill({ council: 'newcastle-upon-tyne', band: 0 });
@@ -33,7 +33,7 @@ export default definePage({
     const rows = tw.map((x) => [x.id === 'newcastle-upon-tyne' ? '<strong>Newcastle upon Tyne</strong>' : h.ca(x.id), h.m2(h.E.bandCharge(x, 0)), h.m2(h.E.bandCharge(x, 1)), h.m2(x.bandD), x.parts.fire ? h.m2(x.parts.fire) : 'none']);
     const north = h.c('northumberland');
     return `
-<h2>Bands A to H in Newcastle</h2>
+<h2>Newcastle council tax, Bands A to H</h2>
 ${h.bandTable('newcastle-upon-tyne')}
 <p>The table uses the city's average Band D, which includes ${h.m2(p.parish)} of parish precepts spread over every home. Outside the six parished areas the true charge is a pound or two lower at Band D.</p>
 

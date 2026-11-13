@@ -13,7 +13,7 @@ export default definePage({
   title: 'Liverpool Council Tax 2026/27: Band A to H Charges Explained',
   description: 'Liverpool council tax 2026/27 for each band, with the Merseyside police and fire precepts, the City Region mayor\'s share and the five other city region areas.',
   h1: 'Liverpool council tax 2026/27',
-  intro: 'The highest Band D in the North West, made of a city charge, two Merseyside precepts and a small share for the city region mayor.',
+  intro: 'Liverpool council tax has the highest Band D in the North West, made of a city charge, two Merseyside precepts and a small share for the city region mayor.',
   resume: (h) => {
     const c = h.c('liverpool'); const ch = h.E.change(c)!; const NW = h.E.inRegion('North West'); const r = h.E.rankIn(c, NW);
     const a = h.E.bill({ council: 'liverpool', band: 0 });
@@ -33,7 +33,7 @@ export default definePage({
     const rows = lcr.map((x) => [x.id === 'liverpool' ? '<strong>Liverpool</strong>' : h.ca(x.id), h.m2(h.E.bandCharge(x, 0)), h.m2(x.bandD), h.m2(x.parts.police), h.m2(x.parts.fire)]);
     const halton = h.c('halton');
     return `
-<h2>Liverpool charges for ${h.P.taxYear}</h2>
+<h2>Liverpool council tax charges for ${h.P.taxYear}</h2>
 ${h.bandTable('liverpool')}
 <p>Every figure above follows from the Band D charge and the fixed ratios in law. If you are not sure which row is yours, the ${h.src('voa_check', 'Valuation Office search')} gives the band of any address in seconds, and the ${h.a('check-council-tax-band', 'band checking guide')} explains what to do if it looks wrong.</p>
 

@@ -13,7 +13,7 @@ export default definePage({
   title: 'Brighton and Hove Council Tax 2026/27: Bands and Students',
   description: 'Brighton and Hove council tax 2026/27 for Bands A to H, what student houses pay, the Rottingdean parish and enclosure charges, and premiums on second homes.',
   h1: 'Brighton and Hove council tax 2026/27',
-  intro: 'A unitary city by the sea with a large student population, one parish and several garden squares that set their own charge.',
+  intro: 'Brighton and Hove is a unitary city by the sea with a large student population, one parish and several garden squares that add their own charge to the council tax bill.',
   resume: (h) => {
     const c = h.c('brighton-and-hove'); const ch = h.E.change(c)!; const p = c.parts;
     const b = h.E.bill({ council: 'brighton-and-hove', band: 2 });
@@ -43,7 +43,7 @@ ${h.bandTable('brighton-and-hove')}
 <h2>Student houses and mixed households</h2>
 <p>Brighton has a large student population, much of it in shared rented houses. The council applies the ${h.src('gov_students', 'national student rules')}: a course of at least one academic year and 21 hours of study a week counts as full time, and for people under 20 on A level courses the threshold is three months and 12 hours. A house where everyone qualifies is exempt during course dates, but tax is due again in any gap between courses. When one adult is not a student, that adult pays with the single person reduction, because ${h.src('gov_who_pays', 'students are disregarded')} when the council counts adults. The city asks for registration numbers or certificates from each student and checks the course dates with the place of study. More detail is in the ${h.a('council-tax-students', 'students guide')} and the ${h.a('council-tax-disregards', 'disregards guide')}.</p>
 
-<h2>Brighton and Hove against the Sussex districts</h2>
+<h2>Brighton and Hove council tax against the Sussex districts</h2>
 <p>To the east and west of the city, bills are split between a district or borough, a county council, the police and fire. The total still ends up close to the city figure, as the table shows on Band C and Band D.</p>
 ${h.table(['Council', 'Type', 'Band C', 'Band D', 'Change on 2025/26'], rows, `${h.P.taxYear}, two adults, main home, from the ${h.src('mhclg_levels', 'MHCLG council tax tables')}.`, ['l', 'l', 'r', 'r', 'r'])}
 <p>The South East average Band D is ${h.m2(avg)}, so the city charge is ${h.m(Math.abs(c.bandD - avg))} ${c.bandD > avg ? 'above' : 'below'} it. The ${h.a('region-south-east', 'South East page')} lists every council in the region.</p>

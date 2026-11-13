@@ -13,7 +13,7 @@ export default definePage({
   title: 'Council Tax Single Person Discount 2026/27: 25 % in Pounds',
   description: 'Single person discount on council tax for 2026/27: what 25 % is worth in your council and band, who counts as living alone, backdating, and the 50 % case.',
   h1: 'Council tax single person discount 2026/27',
-  intro: 'A quarter off the bill when you are the only adult who counts, in England, Wales and Scotland alike.',
+  intro: 'A quarter off the council tax bill when you are the single adult who counts, in England, Wales and Scotland alike.',
   resume: (h) => {
     const man = h.E.bill({ council: 'manchester', band: 1 }), one = h.E.bill({ council: 'manchester', band: 1, household: 'one' });
     const glas = h.E.bill({ council: 'glasgow-city', band: 2 }), glas1 = h.E.bill({ council: 'glasgow-city', band: 2, household: 'one' });

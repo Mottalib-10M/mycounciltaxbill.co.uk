@@ -13,7 +13,7 @@ export default definePage({
   title: 'Student Council Tax Exemption 2026/27: Who Pays, Who Doesn\'t',
   description: 'Student council tax exemption 2026/27: which courses count, the all-student house, mixed households with a worker or partner, certificates and the summer gap.',
   h1: 'Students and council tax',
-  intro: 'A house of full-time students pays nothing. One worker in the house changes everything.',
+  intro: 'A house of full-time students pays no council tax. One worker in the house changes everything.',
   resume: (h) => {
     const ex = h.E.bill({ council: 'exeter', band: 2 }), one = h.E.bill({ council: 'exeter', band: 2, household: 'one' });
     return `A home where every resident is a full-time student is exempt from council tax, under Class N of the Council Tax (Exempt Dwellings) Order 1992 in England, with equivalent rules in Wales and Scotland. A full-time course for this purpose lasts at least one academic or calendar year and needs at least 21 hours of study a week during term; for students under 20 studying up to A level, a course of at least three months and 12 hours a week counts. If one resident is not a student, the home is no longer exempt, but the students are disregarded: with one non-student adult the bill gets the 25 % single person discount. In a Band C house in Exeter that means ${h.m2(one.annual)} for ${h.P.taxYear} instead of nothing, and ${h.m2(ex.annual)} if two or more residents are not students. The exemption is claimed from the council with a certificate from each student's university or college.`;
@@ -28,7 +28,7 @@ export default definePage({
     const towns = ['nottingham', 'exeter', 'cardiff', 'city-of-edinburgh', 'durham'];
     const rows = towns.map((id) => { const c = h.c(id); const one = h.E.bill({ council: id, band: 2, household: 'one' }), two = h.E.bill({ council: id, band: 2 }); return [h.ca(id), 'nothing', h.m2(one.annual), h.m2(two.annual)]; });
     return `
-<h2>Who counts as a full-time student</h2>
+<h2>Who counts as a full-time student for council tax</h2>
 <p>For council tax, "student" has a precise meaning (${h.src('gov_students', 'GOV.UK, discounts for full-time students')}):</p>
 <ul>
 <li>at university or college, on a course of at least one year that needs at least 21 hours of study a week for at least 24 weeks of the year;</li>

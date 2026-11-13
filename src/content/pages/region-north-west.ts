@@ -13,7 +13,7 @@ export default definePage({
   title: 'North West Council Tax 2026/27: 35 Councils Ranked by Band',
   description: 'North West council tax 2026/27 for 35 councils: Greater Manchester and Liverpool City Region mayoral precepts, Lancashire districts, Cumbria, and every band.',
   h1: 'North West council tax 2026/27',
-  intro: 'From Carlisle to Crewe, a bill made of up to six parts depending on where the boundary runs.',
+  intro: 'From Carlisle to Crewe, a North West council tax bill is made of up to six parts depending on where the boundary runs.',
   resume: (h) => {
     const L = h.E.inRegion('North West'); const s = [...L].sort((a, b) => a.bandD - b.bandD); const lo = s[0], hi = s[s.length - 1];
     return `The ${L.length} billing authorities of the North West charged between ${h.m2(lo.bandD)} at Band D in ${lo.name} and ${h.m2(hi.bandD)} in ${hi.name} for ${h.P.taxYear}, for a home with two adults; the simple average is ${h.m2(h.E.average(L))}. The region has two mayoral combined authorities. In the ten Greater Manchester boroughs the bill includes a mayoral precept of ${h.m2(h.c('manchester').parts.combined)} at Band D, which covers the fire service, while the mayor also sets the police precept as police and crime commissioner. In the six councils of the Liverpool City Region the mayor adds ${h.m2(h.c('liverpool').parts.combined)}. Lancashire's twelve districts pay a large county share on top of their own, and Cumbria, Cheshire and the remaining unitary councils have a single council charge. ${h.ca('trafford', 'Trafford')} and ${h.ca('warrington', 'Warrington')} were allowed rises above the normal limit.`;
@@ -42,7 +42,7 @@ ${h.councilTable(L, `Two adults, main home, ${h.P.taxYear}. Mayoral, police, fir
 <h2>Neighbours across a boundary</h2>
 <p>Because the mayoral precepts stop at the city region boundary, two homes a mile apart can pay very different bills. ${h.ca('warrington', 'Warrington')} sits between Greater Manchester and Merseyside but belongs to neither, so it pays no mayoral precept; its Band D is ${h.m2(h.c('warrington').bandD)}. ${h.ca('st-helens', 'St Helens')}, next door in the Liverpool City Region, charges ${h.m2(h.c('st-helens').bandD)}, and ${h.ca('wigan', 'Wigan')}, on the Greater Manchester side, ${h.m2(h.c('wigan').bandD)}. If you are choosing between towns, compare the band charge of the actual home, not the reputation of the council.</p>
 
-<h2>Working out a North West bill</h2>
+<h2>Working out a North West council tax bill</h2>
 <p>The calculator above opens on Wigan, Band B, the lowest Band D in the region. Pick your council and band and choose who lives in the home. Most homes in the region's towns are in Bands A and B, where bills are two thirds and seven ninths of the Band D figure.</p>
 `;
   },

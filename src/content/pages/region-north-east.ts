@@ -13,7 +13,7 @@ export default definePage({
   title: 'North East Council Tax 2026/27: All 12 Councils by Band',
   description: 'North East council tax 2026/27 for all 12 councils: Bands A, D and H, the change on last year, the police and fire shares, and why bills differ so much.',
   h1: 'North East council tax 2026/27',
-  intro: 'High charges per band, low bands per home: the region where the Band D figure misleads the most.',
+  intro: 'High council tax charges per band, low bands per home: the North East is the region where the Band D figure misleads the most.',
   resume: (h) => {
     const L = h.E.inRegion('North East'); const s = [...L].sort((a, b) => a.bandD - b.bandD); const lo = s[0], hi = s[s.length - 1];
     return `The North East has ${L.length} councils, all of them unitary or metropolitan, so each sends a single bill without a county council share. For ${h.P.taxYear} their Band D charges run from ${h.m2(lo.bandD)} in ${lo.name} to ${h.m2(hi.bandD)} in ${hi.name}, with a simple average of ${h.m2(h.E.average(L))}, above the English average of ${h.m2(h.P.averages.england.bandD)}. That headline is misleading for most households, because the region has more homes in Band A than any other part of England: a Band A home in ${hi.name} pays ${h.m2(h.E.bandCharge(hi, 0))}, and in ${lo.name} ${h.m2(h.E.bandCharge(lo, 0))}. Three police areas share the region, Northumbria, Durham and Cleveland, and their precepts explain part of the gap between the north and south of it. Neither of the region's two combined authorities sets a council tax precept this year.`;

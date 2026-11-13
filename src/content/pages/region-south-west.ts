@@ -13,7 +13,7 @@ export default definePage({
   title: 'South West Council Tax 2026/27: 27 Councils and Every Band',
   description: 'South West council tax 2026/27 for 27 councils, Isles of Scilly to Dorset: Bands A, D and H, the higher rises in BCP and North Somerset, and second homes.',
   h1: 'South West council tax 2026/27',
-  intro: 'The highest Band D in England, one of the lowest, and a coast full of second homes.',
+  intro: 'South West council tax: the highest Band D in England, one of the lowest, and a coast full of second homes.',
   resume: (h) => {
     const L = h.E.inRegion('South West'); const s = [...L].sort((a, b) => a.bandD - b.bandD); const lo = s[0], hi = s[s.length - 1];
     const ns = h.P.referendum.exceptions2627.find((e) => e.name === 'North Somerset')!, bcp = h.P.referendum.exceptions2627.find((e) => e.name.startsWith('Bournemouth'))!;
@@ -38,7 +38,7 @@ ${h.councilTable(L, `Two adults, main home, ${h.P.taxYear}. County, police, fire
 <h2>Bournemouth, Christchurch and Poole</h2>
 <p>${h.ca('bournemouth-christchurch-and-poole', 'BCP Council')} charges ${h.m2(bcp.bandD)} at Band D, a rise of ${h.pc(h.E.change(bcp)!.rate, 1)}, after the government allowed it a higher limit. It shares Dorset police and Dorset and Wiltshire fire with its neighbour Dorset Council, yet its Band D is lower by ${h.m(h.c('dorset').bandD - bcp.bandD)}, mainly because of the two councils' own charges, with Dorset's larger parish precepts adding to the gap.</p>
 
-<h2>Second homes and holiday lets</h2>
+<h2>South West council tax on second homes and holiday lets</h2>
 <p>Cornwall, Devon's coastal districts, Dorset and the Isles of Scilly have many second homes. Since April 2025 English councils may charge a second home premium of up to ${h.pc(h.P.premiums.england.secondHomeMax)}, and Cornwall charges the full amount. A Band D second home in Cornwall now pays ${h.m2(h.E.bill({ council: 'cornwall', band: 3, occupancy: 'second', premium: h.P.localPremiums.cornwall.second }).annual)}. Holiday lets that are available for 140 days a year and let for 70 pay business rates instead. The ${h.a('second-home-council-tax', 'second homes guide')} has the exceptions.</p>
 
 <h2>Parishes and towns</h2>

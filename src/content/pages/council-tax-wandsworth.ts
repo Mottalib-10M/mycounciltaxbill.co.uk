@@ -13,7 +13,7 @@ export default definePage({
   title: 'Wandsworth Council Tax 2026/27: Lowest Band D in England',
   description: 'Wandsworth council tax 2026/27 for Bands A to H, the borough and Mayor of London shares, a comparison with Lambeth and Merton, and the second home premium.',
   h1: 'Wandsworth council tax 2026/27',
-  intro: 'The cheapest Band D of any billing authority in England, and a bill in which the Mayor\'s precept weighs as much as the borough.',
+  intro: 'The cheapest Band D council tax of any billing authority in England, and a bill in which the Mayor\'s precept weighs as much as the borough.',
   resume: (h) => {
     const c = h.c('wandsworth'); const ch = h.E.change(c)!; const p = c.parts;
     const r = h.E.rankIn(c, h.E.inNation('england'));
@@ -36,7 +36,7 @@ export default definePage({
     const lam = h.c('lambeth');
     const gap = h.E.bandCharge(lam, 4) - h.E.bandCharge(c, 4);
     return `
-<h2>Wandsworth charges for ${h.P.taxYear}, band by band</h2>
+<h2>Wandsworth council tax for ${h.P.taxYear}, band by band</h2>
 ${h.bandTable('wandsworth')}
 <p>Band H in Wandsworth, the band for homes worth ${h.P.bands.england.ranges[7]} in 1991, costs less than Band D in ${h.num(h.E.inNation('england').filter((x) => x.bandD > h.E.bandCharge(c, 7)).length)} of the ${h.num(h.E.inNation('england').length)} English billing authorities. That is the practical effect of a very low borough charge: the ratios between bands are the same everywhere, but they multiply a smaller base.</p>
 

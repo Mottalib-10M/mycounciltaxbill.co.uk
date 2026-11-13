@@ -13,7 +13,7 @@ export default definePage({
   title: 'Yorkshire Council Tax 2026/27: All 15 Councils by Band',
   description: 'Yorkshire and the Humber council tax 2026/27 for all 15 councils, Doncaster to North Yorkshire: Bands A, D and H, the change on last year and police shares.',
   h1: 'Yorkshire and the Humber council tax 2026/27',
-  intro: 'Fifteen councils, each sending a single bill, and four police forces that explain much of the difference between them.',
+  intro: 'Fifteen councils, each sending a single council tax bill, and four police forces that explain much of the difference between them.',
   resume: (h) => {
     const L = h.E.inRegion('Yorkshire and the Humber'); const s = [...L].sort((a, b) => a.bandD - b.bandD); const lo = s[0], hi = s[s.length - 1];
     return `Every council in Yorkshire and the Humber is now a single tier: nine metropolitan boroughs in West and South Yorkshire, and six unitary councils including North Yorkshire, created in 2023 from the old county and its districts. For ${h.P.taxYear} their Band D charges for two adults run from ${h.m2(lo.bandD)} in ${lo.name} to ${h.m2(hi.bandD)} in ${hi.name}, with a simple average of ${h.m2(h.E.average(L))}. The four police forces set different precepts: West Yorkshire's is ${h.m2(h.c('leeds').parts.police)} at Band D, South Yorkshire's ${h.m2(h.c('doncaster').parts.police)}, Humberside's ${h.m2(h.c('kingston-upon-hull').parts.police)} and North Yorkshire's ${h.m2(h.c('north-yorkshire').parts.police)}. In West and South Yorkshire the elected mayor sets the police precept. Most homes in the region are in Bands A to C, so the usual bill is between two thirds and eight ninths of the Band D figure.`;

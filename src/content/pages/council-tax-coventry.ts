@@ -13,7 +13,7 @@ export default definePage({
   title: 'Coventry Council Tax 2026/27: Every Band and Parish Area',
   description: 'Coventry council tax 2026/27 from Band A to H, the extra charge in Allesley, Finham and Keresley, student exemptions and a comparison with Warwickshire towns.',
   h1: 'Coventry council tax 2026/27',
-  intro: 'A metropolitan city with three small parishes, a large student population and Warwickshire on its doorstep.',
+  intro: 'Coventry council tax: a metropolitan city with three small parishes, a large student population and Warwickshire on its doorstep.',
   resume: (h) => {
     const c = h.c('coventry'); const ch = h.E.change(c)!; const p = c.parts;
     const b = h.E.bill({ council: 'coventry', band: 1 }); const one = h.E.bill({ council: 'coventry', band: 1, household: 'one' });
@@ -44,7 +44,7 @@ ${h.bandTable('coventry')}
 <h2>Allesley, Finham and Keresley</h2>
 <p>Coventry is mostly unparished, but ${c.parishes} areas on its outskirts have their own parish councils, which set a precept on top of the city charge. For ${h.P.taxYear} the council publishes an extra £40.25 at Band D in Allesley, £13.54 in Finham and £22.08 in Keresley. The government table spreads those sums across the whole city, which gives the average of ${h.m2(c.parts.parish)} built into the figures here. If your bill names one of the three parishes, your real charge is slightly above the table; if not, slightly below.</p>
 
-<h2>Coventry next to Warwickshire and Solihull</h2>
+<h2>Coventry council tax next to Warwickshire and Solihull</h2>
 <p>Warwickshire districts and Solihull border the city, and the structure of their bills is different. A Coventry bill pays one authority for almost every local service. In Warwick, Rugby or Nuneaton and Bedworth, the district collects for itself, for Warwickshire County Council and for the Warwickshire police precept, and most villages add a parish precept. The column for the county share below shows how much of each Band D bill goes to the county.</p>
 ${h.table(['Council', 'Band B', 'Band D', 'County share at D', 'Change on 2025/26'], rows, `${h.P.taxYear}, two adults, main home, from the ${h.src('mhclg_levels', 'MHCLG tables')}.`, ['l', 'r', 'r', 'r', 'r'])}
 <p>The average Band D across the West Midlands is ${h.m2(avg)}, so Coventry pays ${h.m(c.bandD - avg)} more than the regional average. The ${h.a('region-west-midlands', 'West Midlands page')} lists every council in the region from the dearest.</p>

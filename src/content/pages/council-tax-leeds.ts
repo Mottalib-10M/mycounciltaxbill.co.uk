@@ -13,7 +13,7 @@ export default definePage({
   title: 'Leeds Council Tax 2026/27: Every Band and Parish Precepts',
   description: 'Leeds council tax 2026/27 for Bands A to H, with the parish and town council precepts of Wetherby or Otley, the West Yorkshire police share and nearby charges.',
   h1: 'Leeds council tax 2026/27',
-  intro: 'One city charge, a West Yorkshire police and fire share, and a parish precept that depends on where in the district you live.',
+  intro: 'Leeds council tax brings together one city charge, a West Yorkshire police and fire share, and a parish precept that depends on where in the district you live.',
   resume: (h) => {
     const c = h.c('leeds'); const ch = h.E.change(c)!; const b = h.E.bill({ council: 'leeds', band: 1 });
     const Y = h.E.inRegion('Yorkshire and the Humber'); const r = h.E.rankIn(c, Y);

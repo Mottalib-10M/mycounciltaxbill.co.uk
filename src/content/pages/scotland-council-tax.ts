@@ -13,7 +13,7 @@ export default definePage({
   title: 'Council Tax Scotland 2026/27: Bands, Ratios and Water Bills',
   description: 'Council tax in Scotland for 2026/27: bands on 1991 values, the 2017 ratios, Scottish Water charges, assessors and the new premiums on second and empty homes.',
   h1: 'Council tax in Scotland, 2026/27',
-  intro: 'Same eight letters as England, but different values, different ratios, a water bill on top and its own assessors.',
+  intro: 'Scottish council tax uses the same eight letters as England, but different values, different ratios, a water bill on top and its own assessors.',
   resume: (h) => {
     const P = h.P; const S = P.bands.scotland; const st = h.E.bill({ council: 'stirling', band: 4 });
     return `Scottish council tax uses eight bands, A to H, based on what a home would have sold for on ${S.valuationDate}, but the value ranges are lower than in England, from ${S.ranges[0]} for Band A to ${S.ranges[7]} for Band H. Since ${S.ratioChange.split(' (')[0]} the four upper bands pay a larger share of Band D than before, under the Council Tax (Substitution of Proportion) (Scotland) Order 2016: Band E now pays ${S.num[4]}/${S.den} of Band D and Band H ${S.num[7]}/${S.den}. Each council adds Scottish Water's water and waste water charges, which are the same everywhere and rose ${h.pc(P.scottishWater.increase)} this year. A Band E home in Stirling with two adults pays ${h.m2(st.councilTax)} of council tax plus ${h.m2(st.water + st.sewerage)} for water, ${h.m2(st.annual)} in all for ${P.taxYear}. Bands are set by local assessors, not by the Valuation Office Agency, and from ${h.date(P.premiums.scotland.from)} councils charge second homes and long-term empty homes a premium of ${h.pc(P.premiums.scotland.default)} by default.`;

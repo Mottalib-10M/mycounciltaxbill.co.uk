@@ -13,7 +13,7 @@ export default definePage({
   title: 'Durham Council Tax 2026/27: Band A to H and Parish Charges',
   description: 'Durham council tax 2026/27 from Band A upwards, the parish and town council share, premiums of up to 300 % on empty homes and a North East comparison.',
   h1: 'County Durham council tax 2026/27',
-  intro: 'A large unitary county with a parish or town council in most communities and bills that start well below the English average in the lowest band.',
+  intro: 'A large unitary county with a parish or town council in most communities and council tax bills that start well below the English average in the lowest band.',
   resume: (h) => {
     const c = h.c('durham'); const ch = h.E.change(c)!; const p = c.parts;
     const a = h.E.bill({ council: 'durham', band: 0 }); const a1 = h.E.bill({ council: 'durham', band: 0, household: 'one' });
@@ -35,7 +35,7 @@ export default definePage({
     const own = c.bandD - c.parts.parish;
     const dbr = h.E.bill({ council: 'durham', band: 0, disabled: true });
     return `
-<h2>County Durham, every band</h2>
+<h2>County Durham council tax, every band</h2>
 ${h.bandTable('durham')}
 <p>Bands follow the values of April 1991, and house prices in the North East were then among the lowest in England, so lower bands are common across the county. That is why this page starts on Band A rather than Band D. Each step up to Band D adds one ninth of the Band D charge; above it the steps grow to two and then three ninths.</p>
 

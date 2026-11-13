@@ -13,7 +13,7 @@ export default definePage({
   title: 'Second Home Council Tax 2026/27: Premiums in Three Nations',
   description: 'Second home council tax for 2026/27: the premium of up to 100 % in England and 300 % in Wales, Scotland\'s 100 % default, the exceptions, and the bill in pounds.',
   h1: 'Council tax on a second home',
-  intro: 'A furnished home that is nobody\'s main residence now pays a premium in most of Britain. The size of it depends on the nation and the council.',
+  intro: 'A furnished home that is nobody\'s main residence now pays a council tax premium in most of Britain. The size of it depends on the nation and the council.',
   resume: (h) => {
     const PE = h.P.premiums; const g = h.E.bill({ council: 'gwynedd', band: 3, occupancy: 'second', premium: h.P.localPremiums.gwynedd.second }), gm = h.E.bill({ council: 'gwynedd', band: 3 });
     return `A second home, for council tax, is a furnished dwelling that is nobody's sole or main residence: a holiday cottage, a city flat used for work, a parent's house kept furnished after they move. Since ${h.date(PE.england.secondHomeFrom)}, councils in England may charge a premium of up to ${h.pc(PE.england.secondHomeMax)} on top of the normal bill, so the owner pays up to twice the band charge. In Wales the premium can reach ${h.pc(PE.wales.max)}, four times the bill, since ${h.date(PE.wales.from)}; Gwynedd charges ${h.pc(h.P.localPremiums.gwynedd.second)}, which takes a Band D home from ${h.m2(gm.annual)} to ${h.m2(g.annual)} for ${h.P.taxYear}. In Scotland a premium of ${h.pc(PE.scotland.default)} applies by default from ${h.date(PE.scotland.from)}, and each council can set another rate. Exceptions cover job-related homes, annexes, and for up to ${PE.england.exceptionMonths} months homes being sold, let or settled after a death. The council decides, and the owner must tell it.`;
@@ -29,7 +29,7 @@ export default definePage({
     const rows = cases.filter(([id]) => { try { h.c(id); return true; } catch { return false; } }).map(([id, b, p]) => { const n = h.E.bill({ council: id, band: b }), s = h.E.bill({ council: id, band: b, occupancy: 'second', premium: p }); return [h.ca(id), h.m2(n.annual), h.pc(s.premiumRate), h.m2(s.annual)]; });
     const cw = h.E.bill({ council: 'cornwall', band: 4, occupancy: 'second', premium: h.P.localPremiums.cornwall.second });
     return `
-<h2>What counts as a second home</h2>
+<h2>What counts as a second home for council tax</h2>
 <p>A dwelling is a second home for council tax when it is furnished and nobody lives there as their sole or main residence (${h.src('gov_second_empty', 'GOV.UK, second homes and empty properties')}). Owning another house does not make it a second home if somebody lives in it as their own home: a house let to a tenant is the tenant's main residence. A home that is empty and substantially unfurnished is not a second home either; it falls under the ${h.a('empty-property-council-tax', 'empty homes rules')}.</p>
 <p>Your main residence is a question of fact. Councils look at where you spend most of your time, where you are registered to vote and with a GP, where your children go to school, and which address is on your bank and tax records.</p>
 

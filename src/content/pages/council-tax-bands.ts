@@ -13,7 +13,7 @@ export default definePage({
   title: 'Council Tax Bands 2026/27: Value Ranges and Charges by Band',
   description: 'Council tax bands A to H, and I in Wales: 1991 and 2003 value ranges, the share of Band D each band pays, and what each band costs in 2026/27 across Britain.',
   h1: 'Council tax bands: ranges, ratios and what each band costs',
-  intro: 'Eight bands in England and Scotland, nine in Wales, all priced as a fraction of Band D.',
+  intro: 'Eight council tax bands in England and Scotland, nine in Wales, all priced as a fraction of Band D.',
   resume: (h) => {
     const E = h.P.bands.england, W = h.P.bands.wales, S = h.P.bands.scotland, A = h.P.averages;
     return `Every home in England and Scotland is in one of eight council tax bands, A to H, and every home in Wales in one of nine, A to I. The band depends on what the home would have sold for on ${E.valuationDate} in England and Scotland, or on ${W.valuationDate} in Wales, not on its value today: in England Band A covers homes worth ${E.ranges[0]} then and Band H homes worth ${E.ranges[7]}. Each band pays a fixed fraction of the Band D charge that your council sets each year. In England and Wales Band A pays ${E.num[0]}/${E.den} of Band D and Band H ${E.num[7]}/${E.den}, twice as much; in Scotland the fractions have been steeper since ${S.ratioChange.split(' (')[0]}. With the ${h.P.taxYear} average Band D of ${h.m2(A.england.bandD)} in England, that puts Band A at ${h.m(A.england.bandD * E.num[0] / E.den)} and Band H at ${h.m(A.england.bandD * E.num[7] / E.den)} a year, before any discount.`;
@@ -30,7 +30,7 @@ export default definePage({
     const pick = ['sunderland', 'surrey-heath', 'swansea', 'aberdeenshire'];
     const rowsCost = pick.map((id) => { const c = h.c(id); const L = h.E.letters(c.nation); return [h.ca(id), h.m2(h.E.bandCharge(c, 0)), h.m2(h.E.bandCharge(c, 3)), h.m2(h.E.bandCharge(c, L.length - 1)), `Band ${L[L.length - 1]}`]; });
     return `
-<h2>The value ranges</h2>
+<h2>The value ranges of the council tax bands</h2>
 <p>A band is a bracket of values, set in law and the same for every council of the nation. In England and Wales they are fixed by section 5 of the Local Government Finance Act 1992 (${h.src('leg_lgfa_ratios', 'section 5 of the 1992 Act')}); the Valuation Office explains how it places a home in its band (${h.src('gov_bands', 'GOV.UK, how bands are assessed')}).</p>
 ${h.table(['Band', `England, value on ${B.england.valuationDate}`, `Wales, value on ${B.wales.valuationDate}`, 'Share of Band D'], rowsEW, 'Band I exists only in Wales.', ['l', 'l', 'l', 'l'])}
 <p>The Welsh brackets are higher because they use prices twelve years later. They are not a guide to a Welsh home's value today either: they too are frozen, and the ${h.a('wales-council-tax-revaluation', 'Welsh revaluation')} planned for 2028 will set new ones.</p>

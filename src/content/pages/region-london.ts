@@ -13,7 +13,7 @@ export default definePage({
   title: 'London Council Tax 2026/27: All 33 Boroughs by Band',
   description: 'London council tax 2026/27 for all 33 boroughs, from Wandsworth to Kingston upon Thames, with Band A, D and H, the change on last year and the Mayor\'s share.',
   h1: 'London council tax 2026/27, borough by borough',
-  intro: 'The same Mayor\'s precept everywhere, then a borough charge that varies by more than a thousand pounds.',
+  intro: 'The same Mayor\'s precept on every London council tax bill, then a borough charge that varies by more than a thousand pounds.',
   resume: (h) => {
     const L = h.E.inRegion('London'); const s = [...L].sort((a, b) => a.bandD - b.bandD);
     const lo = s[0], hi = s[s.length - 1], gla = h.c('lambeth').parts.county;
@@ -33,7 +33,7 @@ export default definePage({
     const w = h.c('wandsworth'), k = h.c('kingston-upon-thames');
     const gap = h.E.bill({ council: 'kingston-upon-thames', band: 4 }).annual - h.E.bill({ council: 'wandsworth', band: 4 }).annual;
     return `
-<h2>All London boroughs, ${h.P.taxYear}</h2>
+<h2>Council tax in all London boroughs, ${h.P.taxYear}</h2>
 ${h.councilTable(L, `Two adults, main home, ${h.P.taxYear}. Sorted from the highest Band D. The Greater London Authority precept is included.`)}
 <p>The average Band D charge is ${h.m2(h.E.average(inner))} in the ${inner.length} inner London authorities and ${h.m2(h.E.average(outer))} in the ${outer.length} outer boroughs. The difference matters for a family moving across the city: a Band E home costs ${h.m(gap)} a year more in ${h.ca('kingston-upon-thames', k.name)} than in ${h.ca('wandsworth', w.name)}, for exactly the same type of house.</p>
 

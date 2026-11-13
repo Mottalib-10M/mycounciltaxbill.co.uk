@@ -13,7 +13,7 @@ export default definePage({
   title: 'East Midlands Council Tax 2026/27: 35 Councils, Every Band',
   description: 'East Midlands council tax 2026/27 for 35 councils: Nottingham and Rutland at the top, Lincolnshire districts at the bottom, county shares and every band.',
   h1: 'East Midlands council tax 2026/27',
-  intro: 'Mostly two-tier: a district sends the bill, a county takes most of it.',
+  intro: 'East Midlands council tax is mostly two-tier: a district sends the bill, a county takes most of it.',
   resume: (h) => {
     const L = h.E.inRegion('East Midlands'); const s = [...L].sort((a, b) => a.bandD - b.bandD); const lo = s[0], hi = s[s.length - 1];
     const dist = L.filter((c) => c.cls === 'Shire district');

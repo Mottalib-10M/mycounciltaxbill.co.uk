@@ -18,7 +18,7 @@ export default definePage({
   title: 'Council Tax Increase 2026/27: Rises by Council and Limits',
   description: 'Council tax increase 2026/27: average rises in England, Wales and Scotland, the 4.99 % limit, councils allowed up to 9 %, and the largest and smallest rises.',
   h1: 'How much council tax rose in April 2026',
-  intro: 'An average of almost five per cent in England, but anything from under three to over nine depending on where you live.',
+  intro: 'An average council tax increase of almost five per cent in England, but anything from under three to over nine depending on where you live.',
   resume: (h) => {
     const A = h.P.averages; const en = ranked(h, 'england'), sc = ranked(h, 'scotland'), wa = ranked(h, 'wales');
     return `Council tax rose by an average of ${h.pc(A.england.change, 2)} in England for ${h.P.taxYear}, taking the average Band D bill to ${h.m2(A.england.bandD)}, an increase of ${h.m2(A.england.bandD - A.england.bandDPrev)} on ${h.m2(A.england.bandDPrev)}. English councils with social care duties could raise their own share by up to ${h.pc(h.P.referendum.england.total, 2)} without holding a local referendum, and seven were allowed more, up to ${h.pc(h.P.referendum.exceptions2627[0].limit)} in ${h.P.referendum.exceptions2627[0].name} and ${h.P.referendum.exceptions2627[1].name}. Across all ${en.length} English billing authorities the total rise ran from ${h.pc(en[en.length - 1].r, 1)} in ${en[en.length - 1].c.name} to ${h.pc(en[0].r, 1)} in ${en[0].c.name}. In Wales the average Band D went up ${h.pc(A.wales.change, 1)} to ${h.m2(A.wales.bandD)}, with rises from ${h.pc(wa[wa.length - 1].r, 1)} to ${h.pc(wa[0].r, 1)}. Scottish councils raised theirs by ${h.pc(sc[sc.length - 1].r, 1)} to ${h.pc(sc[0].r, 1)}, with water charges rising on top. These are Band D figures for a home with two adults; a home in a lower band sees a smaller rise in pounds, by the same percentage.`;
@@ -72,7 +72,7 @@ ${h.table(['Council', 'Band D 2025/26', 'Band D 2026/27', 'Change', 'In pounds']
 <h2>When the new charge starts</h2>
 <p>The ${h.P.taxYear} charges apply from 1 April 2026. Bills are sent in March, and the first instalment of the year is usually due in April. If you pay by Direct Debit the new amount is taken automatically; if you pay by standing order you must change the amount yourself, which is a common reason for arrears in the first months of the year.</p>
 
-<h2>The rise for your band</h2>
+<h2>The council tax increase for your band</h2>
 <p>Percentages are the same in every band of a council, but pounds are not. At the English average, the ${h.m(h.P.averages.england.bandD - h.P.averages.england.bandDPrev)} rise at Band D becomes ${h.m((h.P.averages.england.bandD - h.P.averages.england.bandDPrev) * 6 / 9)} in Band A and ${h.m((h.P.averages.england.bandD - h.P.averages.england.bandDPrev) * 2)} in Band H. A single adult pays a quarter less of each, and a household that receives Council Tax Reduction may see little or none of the increase, depending on the council's scheme. The calculator above gives the exact figure for one council and band; the ${h.a('home', 'full calculator')} adds who lives in the home.</p>
 
 <h2>Wales</h2>

@@ -13,7 +13,7 @@ export default definePage({
   title: 'Bradford Council Tax 2026/27: Band A to H and Finances',
   description: 'Bradford council tax 2026/27 for each band, the 4.99 % rise in the council\'s share, its exceptional financial support, parish precepts and empty home premiums.',
   h1: 'Bradford council tax 2026/27',
-  intro: 'A district council still relying on government permission to borrow for day-to-day costs, a rise at the usual limit this year, and charges that vary with the parish.',
+  intro: 'A district council still relying on government permission to borrow for day-to-day costs, a Bradford council tax rise at the usual limit this year, and charges that vary with the parish.',
   resume: (h) => {
     const c = h.c('bradford'); const ch = h.E.change(c)!; const a = h.E.bill({ council: 'bradford', band: 0 });
     return `Bradford's average Band D council tax for ${h.P.taxYear} is ${h.m2(c.bandD)}, compared with ${h.m2(c.bandDPrev!)} in 2025/26, so the whole bill rose by ${h.pc(ch.rate, 1)}. The district council's own part went up by ${h.pc(h.P.referendum.england.total)}, the standard ceiling, made of a ${h.pc(h.P.referendum.england.core)} general rise and ${h.pc(h.P.referendum.england.asc)} for adult social care; the police and fire precepts for West Yorkshire and the parish charges moved separately. The usual Bradford bill is lower than Band D: Band A, the lowest band, costs ${h.m2(a.annual)} a year for two adults and ${h.m2(h.E.bill({ council: 'bradford', band: 0, household: 'one' }).annual)} for one. The council balanced its ${h.P.taxYear} budget with exceptional financial support from the government, agreed in principle, which lets it use borrowing or capital receipts to cover running costs for a limited time. That support is not extra money and does not change what any household pays this year.`;
@@ -32,7 +32,7 @@ export default definePage({
     const rows = ids.map((id) => { const x = h.c(id); return [id === 'bradford' ? '<strong>Bradford</strong>' : h.ca(id), h.m2(h.E.bandCharge(x, 0)), h.m2(x.bandD), h.m2(x.parts.parish), `${x.parishes}`]; });
     const ten = h.E.bill({ council: 'bradford', band: 0, occupancy: 'empty', emptyYears: 10 });
     return `
-<h2>Bradford charges for every band</h2>
+<h2>Bradford council tax for every band</h2>
 ${h.bandTable('bradford')}
 <p>The amounts include the district's average parish precept. Your bill replaces it with the precept of your own parish, or with nothing if you live in a ward that has no parish council.</p>
 

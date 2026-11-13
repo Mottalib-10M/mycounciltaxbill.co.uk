@@ -13,7 +13,7 @@ export default definePage({
   title: 'Council Tax Band Estimate: Turn a 1991 Value Into a Band',
   description: 'Estimate which council tax band a home is in: bring today\'s price back to 1991 or 2003, read the band from the official ranges, then see its 2026/27 bill.',
   h1: 'Which council tax band is my home in?',
-  intro: 'The official answer is one search away. When there is no answer yet, or you doubt it, this is how to estimate one.',
+  intro: 'Your official council tax band is one search away. When there is no answer yet, or you doubt it, this is how to estimate one.',
   resume: (h) => {
     const E = h.P.bands.england;
     const b = h.E.bandFromValue('england', 61000);
@@ -49,7 +49,7 @@ ${h.table(['Nation', 'Value on the valuation date', 'Band', 'Range', 'At the ave
 <h2>Step 4: turn the band into a bill</h2>
 <p>A band means nothing until it is priced by a council. The same Band C costs a different sum in each of the ${h.E.COUNCILS.length} councils of Britain: ${h.m2(h.E.bandCharge(h.c('wandsworth'), 2))} in ${h.c('wandsworth').name} and ${h.m2(h.E.bandCharge(h.c('rutland'), 2))} in ${h.c('rutland').name}. Pick the council and band in the ${h.a('home', 'calculator')} and add who lives there: a single adult, students, an adapted home for a disabled resident.</p>
 
-<h2>Why estimates go wrong</h2>
+<h2>Why a council tax band estimate goes wrong</h2>
 <p>A band near a boundary is a coin toss. If your estimate lands within ten per cent of the top or bottom of a range, either band is possible. Several things push the result off:</p>
 <ul>
 <li>prices of flats, terraces and detached homes did not rise at the same pace, so a local average index can mislead for one type of home;</li>

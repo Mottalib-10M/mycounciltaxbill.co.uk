@@ -13,7 +13,7 @@ export default definePage({
   title: 'East of England Council Tax 2026/27: 45 Councils by Band',
   description: 'East of England council tax 2026/27 for 45 councils in Essex, Hertfordshire, Norfolk, Suffolk, Cambridgeshire and Bedfordshire, with every band and the change.',
   h1: 'East of England council tax 2026/27',
-  intro: 'The region with the most shire districts, where five county councils take the lion\'s share of most bills.',
+  intro: 'The East of England has the most shire districts, and five county councils take the lion\'s share of most council tax bills.',
   resume: (h) => {
     const L = h.E.inRegion('East of England'); const s = [...L].sort((a, b) => a.bandD - b.bandD); const lo = s[0], hi = s[s.length - 1];
     const dist = L.filter((c) => c.cls === 'Shire district');

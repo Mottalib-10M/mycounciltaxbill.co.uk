@@ -13,7 +13,7 @@ export default definePage({
   title: 'South East Council Tax 2026/27: All 64 Councils by Band',
   description: 'South East council tax 2026/27 for 64 councils: Kent, Hampshire, Surrey, Sussex, Oxfordshire and Berkshire, with Bands A, D and H and the change on last year.',
   h1: 'South East council tax 2026/27',
-  intro: 'England\'s largest region by number of councils, and the one where the upper bands matter most.',
+  intro: 'The South East is England\'s largest region by number of councils, and the one where the upper council tax bands matter most.',
   resume: (h) => {
     const L = h.E.inRegion('South East'); const s = [...L].sort((a, b) => a.bandD - b.bandD); const lo = s[0], hi = s[s.length - 1];
     const wm = h.P.referendum.exceptions2627.find((e) => e.name === 'Windsor and Maidenhead')!;
@@ -36,7 +36,7 @@ ${h.councilTable(L, `Two adults, main home, ${h.P.taxYear}. County, police, fire
 ${h.table(['County', 'Districts', 'County share at Band D', 'Average Band D'], cty, `${h.P.taxYear}.`, ['l', 'r', 'r', 'r'])}
 <p>Inside a county, the county share is identical, so the differences between districts come from their own charges and their parishes. Districts typically keep only a few hundred pounds of a Band D bill: in ${h.ca('guildford', 'Guildford')}, ${h.m2(g.parts.council)} out of ${h.m2(g.bandD)}.</p>
 
-<h2>Upper bands</h2>
+<h2>Upper council tax bands in the South East</h2>
 <p>A large share of South East homes were worth more than ${h.P.bands.england.ranges[4].split(' to ')[1]} in 1991, the top of Band E, so Bands F, G and H are common in Surrey, Buckinghamshire and Berkshire. In those bands the bill is thirteen, fifteen or eighteen ninths of Band D. A Band G home in ${h.ca('elmbridge', 'Elmbridge')} pays ${h.m2(h.E.bandCharge(h.c('elmbridge'), 6))} for ${h.P.taxYear}; the same band in ${h.ca('windsor-and-maidenhead', 'Windsor and Maidenhead')} ${h.m2(h.E.bandCharge(h.c('windsor-and-maidenhead'), 6))}. If you think a home is in too high a band, the ${h.a('challenge-council-tax-band', 'challenge guide')} explains the evidence needed.</p>
 
 <h2>Kent and Hampshire: the two largest counties</h2>

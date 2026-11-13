@@ -15,7 +15,7 @@ export default definePage({
   title: 'Leicester Council Tax 2026/27: City Bands vs Leicestershire',
   description: 'Leicester council tax 2026/27 for every band, the Leicestershire police and combined fire shares, and why the city costs more than Blaby, Oadby or Charnwood.',
   h1: 'Leicester council tax 2026/27',
-  intro: 'A unitary city surrounded by two-tier Leicestershire: one council charge inside the boundary, three or four outside it.',
+  intro: 'Leicester is a unitary city surrounded by two-tier Leicestershire: one council charge inside the boundary, three or four outside it.',
   resume: (h) => {
     const c = h.c('leicester'); const ch = h.E.change(c)!; const a = h.E.bill({ council: 'leicester', band: 0 });
     const dear = Math.max(...COUNTY.map((id) => h.c(id).bandD));
@@ -36,7 +36,7 @@ export default definePage({
     const dist = COUNTY.map((id) => h.c(id));
     const avg = h.E.average(dist);
     return `
-<h2>Every band in the city</h2>
+<h2>Every council tax band in Leicester</h2>
 ${h.bandTable('leicester')}
 <p>Because Leicester is unparished, these figures are exact for every address in the city: there is no average hidden in them, unlike in the county.</p>
 

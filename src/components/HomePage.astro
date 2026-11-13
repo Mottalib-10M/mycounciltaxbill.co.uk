@@ -53,7 +53,7 @@ const regions = PAGES.filter((p) => p.group === 'regions'), councils = PAGES.fil
   <div class="prose prose-slate max-w-none">
     <p>This site does better than the first Google result, GOV.UK's page on council tax bands, which sends you to your council without giving any amount, because it works out the real {P.taxYear} bill of a home in each of the {C.length} councils of England, Wales and Scotland, band by band, with the single person discount, exemptions, the Disabled Band Reduction, the premiums on second and empty homes and Scottish Water, from the official tables published in March 2026. Councils publish one table each. The government publishes Band D for everyone. Neither tells a household what it will pay once its own situation is taken into account; that is the gap the calculator fills, for a family, a person living alone, a student house or the owner of a holiday cottage alike.</p>
 
-    <h2>A bill in four steps</h2>
+    <h2>A council tax bill in four steps</h2>
     <p>Every council tax bill in Britain is built the same way, whatever the council. The calculator follows the same order as the council's billing system, so that each line can be checked against the notice that arrives in March.</p>
     <ol>
       <li><strong>The council's Band D charge.</strong> Each billing authority sets one figure a year, the charge for a Band D home with two adults. It includes the precepts of the county council where there is one, the police, the fire service, any mayor and the parish or community council. For {P.taxYear} it ranges from {m2(sorted[0].bandD)} in {sorted[0].name} to {m2(sorted[sorted.length - 1].bandD)} in {sorted[sorted.length - 1].name}.</li>

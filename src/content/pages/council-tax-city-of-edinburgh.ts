@@ -13,7 +13,7 @@ export default definePage({
   title: 'Edinburgh Council Tax 2026/27: Bands and Second Home Charge',
   description: 'Edinburgh council tax 2026/27 for every band with Scottish Water charges, the city\'s second home premium, the rise decided for January 2027 and nearby areas.',
   h1: 'City of Edinburgh council tax 2026/27',
-  intro: 'A Band D rate close to the Scottish average, water charges on the same bill, and a second home premium that is due to rise before the year ends.',
+  intro: 'A council tax Band D rate close to the Scottish average, water charges on the same bill, and a second home premium that is due to rise before the year ends.',
   resume: (h) => {
     const c = h.c('city-of-edinburgh'); const ch = h.E.change(c)!;
     const e = h.E.bill({ council: 'city-of-edinburgh', band: 4 });
@@ -37,7 +37,7 @@ export default definePage({
     const g = h.E.bill({ council: 'city-of-edinburgh', band: 6 });
     const gs = h.E.bill({ council: 'city-of-edinburgh', band: 6, occupancy: 'second', premium: h.P.premiums.scotland.default });
     return `
-<h2>Edinburgh charges for ${h.P.taxYear}</h2>
+<h2>Edinburgh council tax charges for ${h.P.taxYear}</h2>
 ${h.bandTable('city-of-edinburgh')}
 <p>Each figure combines the band charge and the water and waste water charges, which ${h.src('scot_water', 'Scottish Water')} sets for every Scottish home and the council collects. In Band G, council tax alone is ${h.m2(g.councilTax)} and water adds ${h.m2(g.water + g.sewerage)}. The Band G ratio of ${S.num[6]}/${S.den} is steeper than England's fifteen ninths, which is why upper band homes in Scotland pay comparatively more.</p>
 

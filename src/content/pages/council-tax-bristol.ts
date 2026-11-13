@@ -13,7 +13,7 @@ export default definePage({
   title: 'Bristol Council Tax 2026/27: All Bands and Where It Goes',
   description: 'Bristol council tax 2026/27 for every band, the Avon and Somerset police and Avon Fire shares, and how the city compares with Bath and South Gloucestershire.',
   h1: 'Bristol council tax 2026/27',
-  intro: 'One of the highest city charges in England, with police and fire precepts shared across the old county of Avon.',
+  intro: 'Bristol council tax is one of the highest city charges in England, with police and fire precepts shared across the old county of Avon.',
   resume: (h) => {
     const c = h.c('bristol'); const ch = h.E.change(c)!; const SW = h.E.inRegion('South West'); const r = h.E.rankIn(c, SW);
     const b = h.E.bill({ council: 'bristol', band: 1 });
@@ -34,7 +34,7 @@ export default definePage({
     const rows = avon.map((x) => [x.id === 'bristol' ? '<strong>Bristol</strong>' : h.ca(x.id), h.m2(h.E.bandCharge(x, 1)), h.m2(h.E.bandCharge(x, 2)), h.m2(x.bandD), h.m2(x.parts.parish), h.pc(h.E.change(x)!.rate, 1)]);
     const own = p.council; const prec = p.police + p.fire;
     return `
-<h2>Bristol, band by band</h2>
+<h2>Bristol council tax, band by band</h2>
 ${h.bandTable('bristol')}
 <p>The column for one adult applies the national discount of a quarter. At the other end, Band G and Band H homes pay fifteen and eighteen ninths of Band D, so a Band H bill is exactly three times a Band A bill.</p>
 

@@ -15,7 +15,7 @@ export default definePage({
   title: 'Manchester Council Tax 2026/27: Bands and Mayor\'s Precepts',
   description: 'Manchester council tax 2026/27 by band, with the Greater Manchester Mayor\'s police precept and general precept for fire, and how the ten boroughs compare.',
   h1: 'Manchester council tax 2026/27',
-  intro: 'The city charge, plus two precepts set by the Mayor of Greater Manchester: one for policing, one for fire and other mayoral services.',
+  intro: 'The city\'s council tax charge, plus two precepts set by the Mayor of Greater Manchester: one for policing, one for fire and other mayoral services.',
   resume: (h) => {
     const c = h.c('manchester'); const ch = h.E.change(c)!; const a = h.E.bill({ council: 'manchester', band: 0 });
     const list = GM.map((id) => h.c(id)); const r = h.E.rankIn(c, list);
@@ -37,7 +37,7 @@ export default definePage({
     const mayor = p.police + p.combined;
     const top = [...list].sort((x, y) => y.bandD - x.bandD).slice(0, 3);
     return `
-<h2>All eight bands in Manchester</h2>
+<h2>All eight council tax bands in Manchester</h2>
 ${h.bandTable('manchester')}
 <p>A Band A home pays six ninths of Band D and a Band H home eighteen ninths. The band was fixed on 1991 values, so recent price rises in the city centre have not moved any home into a higher band.</p>
 

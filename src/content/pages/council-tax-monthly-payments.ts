@@ -13,7 +13,7 @@ export default definePage({
   title: 'Council Tax Monthly Payments 2026/27: 10 or 12 Instalments',
   description: 'Council tax monthly payments for 2026/27: 10 or 12 instalments split to the penny, why the first one differs, how to switch, and what a missed payment costs.',
   h1: 'Council tax monthly payments: 10 or 12 instalments',
-  intro: 'The yearly bill is split by a fixed formula in the 1992 regulations. Here is how it works, with real bills.',
+  intro: 'The yearly council tax bill is split into monthly payments by a fixed formula in the 1992 regulations. Here is how it works, with real bills.',
   resume: (h) => {
     const P = h.P; const y = h.E.bill({ council: 'york', band: 3 });
     const ten = h.E.instalmentPlan(y.annual, P.instalments.default), twelve = h.E.instalmentPlan(y.annual, P.instalments.onRequest);
@@ -41,7 +41,7 @@ export default definePage({
     const rd = h.E.bill({ council: 'reading', band: 3, household: 'one' }); const late = 9; const rdLate = h.E.instalmentPlan(rd.annual, late);
     const rd12 = h.E.instalmentPlan(rd.annual, T);
     return `
-<h2>Ten or twelve payments for six real bills</h2>
+<h2>Ten or twelve monthly council tax payments for six real bills</h2>
 <p>The table applies the rule of the regulations to bills for ${P.taxYear}, each for two adults in a main home. The yearly total does not move; only the monthly amount and the number of months change. Pick your own figure in the calculator above to get the same split for your bill.</p>
 ${h.table(['Council', 'Band', 'Year', `${D}: first`, `${D}: others`, `${T}: first`, `${T}: others`], rows, `${P.taxYear}, two adults, main home. Computed from the official Band D figures.`, ['l', 'l', 'r', 'r', 'r', 'r', 'r'])}
 <p>On the longer plan each regular payment is about a sixth smaller. For a household on a tight monthly budget the gain is the cash flow, not the price: the money still reaches the council by the end of March, two months later than on the standard plan.</p>

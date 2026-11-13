@@ -13,7 +13,7 @@ export default definePage({
   title: 'Sheffield Council Tax 2026/27: Band Charges and Premiums',
   description: 'Sheffield council tax 2026/27 for Bands A to H, the South Yorkshire police and fire shares, the Stocksbridge precept and premiums on empty and second homes.',
   h1: 'Sheffield council tax 2026/27',
-  intro: 'A city charge that rose by the full limit, police and fire shares common to South Yorkshire, and premiums that the city has confirmed for this year.',
+  intro: 'A city council tax charge that rose by the full limit, police and fire shares common to South Yorkshire, and premiums that the city has confirmed for this year.',
   resume: (h) => {
     const c = h.c('sheffield'); const ch = h.E.change(c)!; const Y = h.E.inRegion('Yorkshire and the Humber'); const r = h.E.rankIn(c, Y);
     const a = h.E.bill({ council: 'sheffield', band: 0 });
@@ -34,7 +34,7 @@ export default definePage({
     const rows = sy.map((x) => [x.id === 'sheffield' ? '<strong>Sheffield</strong>' : h.ca(x.id), h.m2(h.E.bandCharge(x, 0)), h.m2(h.E.bandCharge(x, 2)), h.m2(x.bandD), h.m(x.bandD - x.bandDPrev!)]);
     const emptyRows = E.emptyTiers.map((t, i) => [`${t.years} year${t.years > 1 ? 's' : ''}${E.emptyTiers[i + 1] ? ` to ${E.emptyTiers[i + 1].years}` : ' or more'}`, h.pc(t.max), h.m2(h.E.bill({ council: 'sheffield', band: 0, occupancy: 'empty', emptyYears: t.years }).annual)]);
     return `
-<h2>The Sheffield band table</h2>
+<h2>The Sheffield council tax band table</h2>
 ${h.bandTable('sheffield')}
 <p>These amounts include the average of Sheffield's parish precepts, ${h.m2(p.parish)} at Band D, so a home outside a parish pays a few pounds less than shown and the city's own leaflet lists slightly lower totals.</p>
 

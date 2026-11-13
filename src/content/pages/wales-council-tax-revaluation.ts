@@ -13,7 +13,7 @@ export default definePage({
   title: 'Council Tax Revaluation Wales 2028: What Is Known So Far',
   description: 'Council tax revaluation in Wales from April 2028: what the 2024 Act fixes, the five-year cycle, Band I, and the new bands and values still to be published.',
   h1: 'Council tax revaluation in Wales: the 2028 timetable',
-  intro: 'The law now sets the year of the next Welsh revaluation. The new bands, values and ratios are still to come.',
+  intro: 'The law now sets the year of the next council tax revaluation in Wales. The new bands, values and ratios are still to come.',
   resume: (h) => {
     const P = h.P; const W = P.bands.wales; const g = h.E.bill({ council: 'gwynedd', band: 4 });
     return `Welsh homes are still banded on what they would have been worth on ${W.valuationDate}, in nine bands from A to I, the last revaluation having taken effect in April 2005. The Local Government Finance (Wales) Act 2024 changes that. Section 20 sets new council tax valuation lists on 1 April in each revaluation year, and makes 2028 the first revaluation year followed by one every five years. Section 17 lets the Welsh Ministers change the bands, their number and their proportions of Band D by an order that the Senedd must approve. What the Act does not say is the new valuation date, how many bands there will be, where their limits will sit or what each will pay: the Welsh Government has said it will consult on those points, and every figure for 2028 is to come. For now a Band E home in Gwynedd with two adults pays ${h.m2(g.annual)} for ${P.taxYear}, at ${W.num[4]}/${W.den} of the Band D charge, and Band I, for homes above ${h.m(W.upper[7]!)} in 2003, pays ${W.num[8]}/${W.den}.`;
@@ -40,7 +40,7 @@ export default definePage({
 ${h.table(['Band', `Value on ${W.valuationDate}`, 'Share of Band D', 'At the Welsh average'], rows, `${P.taxYear}, two adults, main home.`, ['l', 'l', 'l', 'r'])}
 <p>Wales is the only part of Britain that has ever revalued for council tax. England and Scotland still use values from 1991, while Wales moved to 2003 values from April 2005 and added Band I at the top. More than twenty years on, the Welsh Government describes those values as out of date, and the gap between what a home was worth in 2003 and what it is worth now differs widely from one area and one type of property to another.</p>
 
-<h2>What the 2024 Act fixes</h2>
+<h2>What the 2024 Act fixes for the council tax revaluation</h2>
 <p>The ${h.src('wales_act', 'Local Government Finance (Wales) Act 2024')} is mostly about business rates, but Part 2 deals with council tax and contains four sections that shape the revaluation:</p>
 <ul>
 <li><strong>Section 20, the timetable.</strong> It amends the 1992 Act so that new valuation lists for Wales are compiled on 1 April in each revaluation year. The revaluation years are 2028 and every fifth year afterwards. The Welsh Ministers may change a year or the interval by order, but only with a vote of approval in the Senedd.</li>
