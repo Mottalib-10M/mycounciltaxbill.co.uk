@@ -51,7 +51,7 @@ ${h.table(['Council', 'Band C', 'Band D', 'Police at D', 'Change on 2025/26'], r
 <p>Welsh councils may charge a premium of up to ${h.pc(h.P.premiums.wales.max)} on second homes and on homes empty for a year or more, under the ${h.src('wales_premiums', 'Welsh Government premiums guidance')}. Each council chooses its own rate and can set different rates for different lengths of time empty. Check Cardiff Council's rate for ${h.P.taxYear} before relying on a figure, then type it into the calculator; the ${h.a('second-home-council-tax', 'second home guide')} explains the exceptions, such as homes on the market or awaiting probate.</p>
 
 <h2>The 2028 revaluation</h2>
-<p>Every home in Wales is to be revalued, with new bands taking effect in April 2028, and then every five years, as set out on the ${h.src('wales_reform', 'Welsh Government reform page')}. Some Cardiff homes will move up a band and others down; the new bands, their value ranges and their ratios are still to come. Until then, the current band on the ${h.src('voa_check', 'GOV.UK search')} is the one used for your bill, and the ${h.a('wales-council-tax-revaluation', 'revaluation guide')} follows each step of the reform.</p>
+<p>Every home in Wales is to be revalued, with new bands taking effect in April 2028, and then every five years, as set out in the ${h.src('wales_reform', 'Welsh Tax Policy Report 2025')}. Some Cardiff homes will move up a band and others down; the new bands, their value ranges and their ratios are still to come. Until then, the current band on the ${h.src('voa_check', 'GOV.UK search')} is the one used for your bill, and the ${h.a('wales-council-tax-revaluation', 'revaluation guide')} follows each step of the reform.</p>
 `;
   },
 });

@@ -6,7 +6,7 @@ export default definePage({
   order: 10,
   mini: { kind: 'mini:spd', props: { council: 'manchester', band: 1 } },
   related: ['home', 'council-tax-disregards', 'council-tax-students', 'council-tax-moving-house'],
-  sources: ['gov_who_pays', 'leg_lgfa_discounts', 'leg_lgfa_disregards', 'wales_reform', 'highland_charges'],
+  sources: ['gov_who_pays', 'leg_lgfa_discounts', 'leg_lgfa_disregards', 'wales_reform', 'wales_discounts', 'highland_charges'],
   slug: 'council-tax-single-person-discount',
   nav: 'Single person discount',
   card: 'The 25 % in pounds for your council and band, and who still counts as living alone.',
@@ -79,7 +79,7 @@ ${h.table(['Council', 'Band D, two adults', 'Living alone', 'Saving'], rows, `Ba
 ${h.box('Before you claim', `<p>Check who lives with you against the list of disregarded people, not against how many beds are taken. A partner who works away during the week but has your home as their main residence still counts.</p>`, 'tip')}
 
 <h2>The single person discount in Wales and Scotland</h2>
-<p>The rule is identical in Wales, where the Welsh Government reviewed all 53 categories of discounts and exemptions as part of its reform and decided to keep the ${h.pc(P.discounts.singlePerson)} single adult discount (${h.src('wales_reform', 'Welsh Government, reforming Council Tax')}). In Scotland the discount is the same and, as the Highland Council's table for ${P.taxYear} shows, it reduces the water and waste water charges by the same quarter (${h.src('highland_charges', 'Highland Council charges 2026 to 2027')}). The calculator above includes that for every Scottish council.</p>
+<p>The rule is identical in Wales, where the Welsh Government reviewed all 53 categories of discounts and exemptions as part of its reform (${h.src('wales_reform', 'Welsh Tax Policy Report 2025')}) and decided to keep the ${h.pc(P.discounts.singlePerson)} single adult discount (${h.src('wales_discounts', 'Welsh Government, consultation of May 2025')}). In Scotland the discount is the same and, as the Highland Council's table for ${P.taxYear} shows, it reduces the water and waste water charges by the same quarter (${h.src('highland_charges', 'Highland Council charges 2026 to 2027')}). The calculator above includes that for every Scottish council.</p>
 `;
   },
 });

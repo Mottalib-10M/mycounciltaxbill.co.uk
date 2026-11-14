@@ -438,9 +438,15 @@
       }
     },
     "wales_reform": {
-      "url": "https://www.gov.wales/find-out-about-how-we-are-reforming-council-tax",
+      "url": "https://www.gov.wales/sites/default/files/publications/2025-11/tax-policy-report-october-2025.pdf",
       "label": {
-        "en": "Welsh Government, Find out about how we are reforming Council Tax (updated 18 February 2025)"
+        "en": "Welsh Government, Welsh Tax Policy Report 2025 (October 2025), council tax section"
+      }
+    },
+    "wales_discounts": {
+      "url": "https://www.gov.wales/consultation-proposed-changes-council-tax-discounts-disregarded-persons-and-exemptions-html",
+      "label": {
+        "en": "Welsh Government, Consultation on the proposed changes to Council Tax discounts, disregarded persons and exemptions (23 May 2025)"
       }
     },
     "wales_act": {
