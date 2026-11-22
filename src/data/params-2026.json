@@ -550,6 +550,42 @@
       "label": {
         "en": "North Wales Fire Services (Combination Scheme) Order 1995, paragraph 21"
       }
+    },
+    "csp_2629": {
+      "url": "https://www.gov.uk/government/publications/explanatory-note-on-core-spending-power-final-local-government-finance-settlement-2026-27-to-2028-29/explanatory-note-on-core-spending-power-final-local-government-finance-settlement-2026-27-to-2028-29",
+      "label": {
+        "en": "MHCLG, Explanatory note on Core Spending Power, final settlement 2026-27 to 2028-29 (9 February 2026)"
+      }
+    },
+    "lgfs_2629": {
+      "url": "https://www.gov.uk/government/collections/final-local-government-finance-settlement-england-2026-2027-to-2028-2029",
+      "label": {
+        "en": "MHCLG, Final local government finance settlement: England, 2026 to 2027 to 2028 to 2029 (9 February 2026)"
+      }
+    },
+    "principles_draft_2627": {
+      "url": "https://www.gov.uk/government/publications/referendums-relating-to-council-tax-increases-principles-england-report-2026-to-2027-draft",
+      "label": {
+        "en": "MHCLG, Draft council tax referendum principles report 2026 to 2027 (17 December 2025)"
+      }
+    },
+    "wales_prov_2627": {
+      "url": "https://www.gov.wales/written-statement-provisional-local-government-settlement-2026-27",
+      "label": {
+        "en": "Welsh Government, Written statement: provisional local government settlement 2026-27 (24 November 2025)"
+      }
+    },
+    "scot_budget_2627": {
+      "url": "https://www.gov.scot/publications/scottish-budget-2026-2027-finance-secretarys-statement-13-january-2026-2/",
+      "label": {
+        "en": "Scottish Government, Scottish Budget 2026-2027: Finance Secretary's statement (13 January 2026)"
+      }
+    },
+    "hvcts": {
+      "url": "https://www.gov.uk/government/publications/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "label": {
+        "en": "HM Treasury, High Value Council Tax Surcharge factsheet (updated 28 October 2026)"
+      }
     }
   },
   "localPremiums": {
@@ -560,5 +596,61 @@
     "cornwall": {
       "second": 1.0
     }
+  },
+  "next": {
+    "taxYear": "2027/28",
+    "taxYearLong": "1 April 2027 to 31 March 2028",
+    "start": "2027-04-01",
+    "retrieved_at": "2026-11-21",
+    "englandPrinciples": {
+      "core": 0.0299,
+      "asc": 0.02,
+      "total": 0.0499,
+      "districtCash": 5,
+      "fireCash": 5,
+      "glaPoliceCash": 15,
+      "note": "Referendum principles for 2026-27 to 2028-29 in the Core Spending Power explanatory note of the final multi-year settlement (9 February 2026, para. 8): 3% core, 2% adult social care, greater of 3% or £5 for shire districts, £5 fire, £15 GLA police. A rise of 3% or more triggers a referendum, hence 2.99% and 4.99% on this site. Confirmed formally each year in the principles report laid with the final settlement."
+    },
+    "noPrinciples2728": [
+      "westminster",
+      "windsor-and-maidenhead",
+      "kensington-and-chelsea",
+      "hammersmith-and-fulham",
+      "city-of-london",
+      "wandsworth"
+    ],
+    "englandProvisionalPrev": "2025-12-17",
+    "walesProvisionalPrev": "2025-11-24",
+    "scotBudgetPrev": "2026-01-13",
+    "hvcts": {
+      "start": "April 2028",
+      "firstBills": "March 2028",
+      "threshold": 2000000,
+      "valuationYear": 2026,
+      "bands": [
+        [
+          "£2m to £2.5m",
+          2500
+        ],
+        [
+          "£2.5m to £3.5m",
+          3500
+        ],
+        [
+          "£3.5m to £5m",
+          5000
+        ],
+        [
+          "£5m and above",
+          7500
+        ]
+      ],
+      "indexFrom": "2029-30"
+    },
+    "scotNewBands": {
+      "from": "by April 2028",
+      "over": 1000000
+    },
+    "englandFinal": "2026-02-09"
   }
 }

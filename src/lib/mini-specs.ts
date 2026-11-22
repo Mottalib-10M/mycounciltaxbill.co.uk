@@ -104,6 +104,13 @@ const SPECS: Record<string, MiniSpec> = {
     run: (v) => { const c = C(v); const b = band(c, v.band); const ch = E.change(c); const now = E.bandCharge(c, b); const prev = c.bandDPrev ? c.bandDPrev * E.ratio(c.nation, b) : 0;
       return { head: ['Rise this year', m(now - prev)], rows: [['2025/26', m2(prev)], ['2026/27', m2(now)], ['Change', ch ? `${(ch.rate * 100).toFixed(1)} %` : 'n/a']], note: 'Two adults, main home, before water charges in Scotland.' }; },
   },
+  'rise-2027': {
+    title: `Your bill in ${P.next.taxYear} at a rise you choose`, cta: `Your ${TY} bill with discounts`, ctaPage: 'home',
+    inputs: [council('leeds'), bandIn(2, true), { id: 'rise', label: 'Rise to test', def: Math.round(P.next.englandPrinciples.total * 10000) / 100, unit: '%', max: 30, decimals: 2, help: 'England: 4.99 % is the usual limit on the council’s own share' }],
+    run: (v) => { const c = C(v); const now = bill(c, v.band).annual; const next = now * (1 + Math.max(0, v.rise) / 100);
+      return { head: [`Estimate for ${P.next.taxYear}`, m2(next)], rows: [[`${TY} bill, two adults`, m2(now)], ['Extra a year', m(next - now)], ['Extra on each of 10 payments', m2((next - now) / 10)]],
+        note: `Estimate, not the real ${P.next.taxYear} bill: it applies one rise to the whole ${TY} bill. Your council sets the real figure in February or March 2027.` }; },
+  },
   'scotland-water': {
     title: `Scottish bill with water, ${TY}`, cta: 'All the options for a Scottish home', ctaPage: 'home',
     inputs: [{ id: 'council', label: 'Scottish council', def: councilIndex('glasgow-city'), options: optsFor('scotland') }, bandIn(2), { id: 'one', label: 'One adult only?', def: 0, options: YESNO }],
