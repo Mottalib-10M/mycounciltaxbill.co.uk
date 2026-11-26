@@ -17,7 +17,7 @@ export const AUTHOR_DESC: Record<string, string> = {"en": "Radif Partners builds
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"en": ["Council tax bands in England, Wales and Scotland", "Council tax single person discount", "Council tax disregards and exemptions", "Disabled Band Reduction Scheme", "Second homes and empty homes council tax premiums", "Scottish Water charges on council tax bills", "Challenging a council tax band with the Valuation Office Agency"]};
 export const CONTACT_EMAIL = "contact@mycounciltaxbill.co.uk";
-export const THEME_COLOR = '#1F3A68';
+export const THEME_COLOR = '#012169';
 export const LOGO_SYMBOL = 'CT';
 export const BING_VERIFY_CODE = '';
 export const GOOGLE_VERIFY_CODE = '';
